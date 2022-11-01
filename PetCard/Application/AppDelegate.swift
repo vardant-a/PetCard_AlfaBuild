@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PetCard
 //
-//  Created by Алексей on 31.10.2022.
+//  Created by Алексей on 21.10.2022.
 //
 
 import UIKit
