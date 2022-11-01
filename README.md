@@ -1,9 +1,9 @@
 # PetCard
 
-## PetProject
 Оригинальный проект (В РАЗРАБОТКЕ)
+Приложение созданное для хранения информации о питомцах (вакцинах, прививках, возрасте, породе).
 
-## Stack
+## Used Technology Stack:
 
 - UIKit, SwiftUI
 - MapKit, CoreLocation
