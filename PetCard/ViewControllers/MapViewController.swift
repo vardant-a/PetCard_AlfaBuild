@@ -31,11 +31,8 @@ final class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
-        view.backgroundColor = .gray
         setNavBar()
+        
         view.addSubview(mapKitView)
         mapKitView.setRegion(MKCoordinateRegion(
             center: coordinateUser,

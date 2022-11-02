@@ -9,7 +9,7 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    private lazy var conditionNotification = false
+    private lazy var conditionNotification = true
     
     private lazy var switchNotifButton = createButton(
         withTitle: "Switch Notification",
@@ -39,7 +39,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .systemBackground
         setNavController()
         setSwitchButton()
     }

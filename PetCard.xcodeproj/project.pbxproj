@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
+		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
 		0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4F291026770016AB4A /* SceneDelegate.swift */; };
 		0EEC7A52291026770016AB4A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A51291026770016AB4A /* MainViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEC7A4D291026770016AB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEC7A4F291026770016AB4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ED5AD742912B20B00042E12 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0ED5AD752912B22600042E12 /* UIColor + extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0EEC7A41291026770016AB4A = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		0EEC7A4C291026770016AB4A /* PetCard */ = {
 			isa = PBXGroup;
 			children = (
+				0ED5AD742912B20B00042E12 /* Helpers */,
 				0EFA571329129B45008C4DC6 /* Services */,
 				0EEC7A64291026A20016AB4A /* Application */,
 				0EEC7A65291026C70016AB4A /* Navigations */,
@@ -94,8 +105,8 @@
 		0EEC7A65291026C70016AB4A /* Navigations */ = {
 			isa = PBXGroup;
 			children = (
-				0EEC7A66291026DF0016AB4A /* MainTabBarController.swift */,
 				0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */,
+				0EEC7A66291026DF0016AB4A /* MainTabBarController.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				0EFA571529129B51008C4DC6 /* ThemeApp.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
+				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
 				0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */,
 				0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */,
 			);

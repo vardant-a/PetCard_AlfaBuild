@@ -64,8 +64,8 @@ extension MainTabBarController {
 extension MainTabBarController {
     private func settingTabBar() {
         let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.backgroundColor = .darkGray
-        tabBarAppearance.unselectedItemTintColor = .white
+        tabBarAppearance.backgroundColor = .navColor
+        tabBarAppearance.unselectedItemTintColor = .systemGray
         tabBarAppearance.tintColor = .systemBlue
     }
 }
