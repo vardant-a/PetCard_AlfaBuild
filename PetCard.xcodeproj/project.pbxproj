@@ -18,6 +18,8 @@
 		0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A69291028D90016AB4A /* MapViewController.swift */; };
 		0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6B291033510016AB4A /* SettingsViewController.swift */; };
 		0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6D291041940016AB4A /* CalendarViewController.swift */; };
+		0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */; };
+		0EFA571529129B51008C4DC6 /* ThemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA571429129B51008C4DC6 /* ThemeApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0EEC7A69291028D90016AB4A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0EEC7A6B291033510016AB4A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EEC7A6D291041940016AB4A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		0EFA571429129B51008C4DC6 /* ThemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		0EEC7A4C291026770016AB4A /* PetCard */ = {
 			isa = PBXGroup;
 			children = (
+				0EFA571329129B45008C4DC6 /* Services */,
 				0EEC7A64291026A20016AB4A /* Application */,
 				0EEC7A65291026C70016AB4A /* Navigations */,
 				0EEC7A68291028970016AB4A /* ViewControllers */,
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0EEC7A66291026DF0016AB4A /* MainTabBarController.swift */,
+				0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */,
 			);
 			path = Navigations;
 			sourceTree = "<group>";
@@ -104,6 +110,14 @@
 				0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0EFA571329129B45008C4DC6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0EFA571429129B51008C4DC6 /* ThemeApp.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,11 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,
 				0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */,
 				0EEC7A52291026770016AB4A /* MainViewController.swift in Sources */,
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
+				0EFA571529129B51008C4DC6 /* ThemeApp.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
 				0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */,

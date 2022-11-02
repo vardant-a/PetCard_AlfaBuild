@@ -19,18 +19,20 @@ final class MainViewController: UIViewController {
             print(self.conditionNotification)
         }
     )
-//    : UIButton = {
-//        let button = UIButton()
-//        button.backgroundColor = .systemBlue
-//        button.setTitle("Switch Notification", for: .normal)
-//        return button
-//    }()
+    //    : UIButton = {
+    //        let button = UIButton()
+    //        button.backgroundColor = .systemBlue
+    //        button.setTitle("Switch Notification", for: .normal)
+    //        return button
+    //    }()
     
     private lazy var testButton = createButton(
         withTitle: "test",
         andColor: .black,
         action: UIAction { _ in print("1") }
     )
+    
+    
     
     // MARK: - Ovveride Methods
     
@@ -42,15 +44,12 @@ final class MainViewController: UIViewController {
         setSwitchButton()
     }
     
-    // MARK: - @OBJC Methods for buttons
-    
-    // action testButtons
-    @objc func switchConditionNot() {
-//        conditionNotification.toggle()
-//        print(conditionNotification)
-    }
-    
-    // action navBarItem
+
+}
+
+// MARK: - @Objc Methods for BarButtonItem
+
+extension MainViewController {
     @objc func presentNotifications() {
         if conditionNotification {
             let notificationVC = NotificationListViewController()
@@ -67,9 +66,9 @@ final class MainViewController: UIViewController {
 
 extension MainViewController {
     private func setNavController() {
-        title = "Home"
-        navigationController?.navigationBar.prefersLargeTitles = true
         let navBarItem = createNavBarItem()
+        
+        title = "Home"
         navigationItem.rightBarButtonItem = navBarItem
     }
 }
@@ -78,7 +77,6 @@ extension MainViewController {
 
 extension MainViewController {
     private func setSwitchButton() {
-        switchNotifButton.addTarget(self, action: #selector(switchConditionNot), for: .touchUpInside)
         view.addSubview(switchNotifButton)
         
         switchNotifButton.translatesAutoresizingMaskIntoConstraints = false
@@ -95,7 +93,8 @@ extension MainViewController {
         let notifImage = UIImage(
             systemName: conditionNotification
             ? "bell.badge.fill"
-            : "bell")
+            : "bell"
+        )
         
         let navBarItem = UIBarButtonItem(
             image: notifImage,
@@ -119,7 +118,7 @@ extension MainViewController {
             
             var buttonConfiguration = UIButton.Configuration.filled()
             buttonConfiguration.title = title
-            buttonConfiguration.background.cornerRadius = 100
+            buttonConfiguration.background.cornerRadius = 20
             
             return UIButton(
                 configuration: buttonConfiguration,

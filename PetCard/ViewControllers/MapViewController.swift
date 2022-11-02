@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 final class MapViewController: UIViewController {
     
@@ -23,6 +24,11 @@ final class MapViewController: UIViewController {
         return map
     }()
     
+    private let coordinateUser = CLLocationCoordinate2D(
+        latitude: 40.728,
+        longitude: -74
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +37,13 @@ final class MapViewController: UIViewController {
         view.backgroundColor = .gray
         setNavBar()
         view.addSubview(mapKitView)
+        mapKitView.setRegion(MKCoordinateRegion(
+            center: coordinateUser,
+            span: MKCoordinateSpan(
+                latitudeDelta: 0.1,
+                longitudeDelta: 0.1)),
+            animated: false
+        )
         setConstraints()
     }
 }
@@ -39,7 +52,6 @@ final class MapViewController: UIViewController {
 extension MapViewController {
     private func setNavBar() {
         title = "Animal Map"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
     }

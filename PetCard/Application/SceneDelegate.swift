@@ -17,10 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = MainTabBarController()
-        
-        settingNavBar()
-        settingTabBar()
-        
         window?.makeKeyAndVisible()
     }
 
@@ -55,20 +51,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 }
-
-extension SceneDelegate {
-    // MARK: - NavigationBar settings throughout the app
-    private func settingNavBar() {
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.backgroundColor = .white
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-    }
     
     // MARK: - TabBarController settings throughout the app
+extension SceneDelegate {
     private func settingTabBar() {
         let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.backgroundColor = .white
+        tabBarAppearance.backgroundColor = .darkGray
         tabBarAppearance.unselectedItemTintColor = .systemGray5
         tabBarAppearance.tintColor = .systemBlue
     }

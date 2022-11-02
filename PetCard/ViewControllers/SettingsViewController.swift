@@ -13,6 +13,5 @@ final class SettingsViewController: UIViewController {
         super.viewDidLoad()
         title = "Settings"
         view.backgroundColor = .green
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

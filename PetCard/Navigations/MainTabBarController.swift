@@ -9,12 +9,10 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        settingTabBar()
         
         let homeVC = createVC(
             MainViewController(),
@@ -46,12 +44,13 @@ final class MainTabBarController: UITabBarController {
         
         self.viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
     }
+    
 }
 
 // MARK: - Create VC and TabBarItem
 extension MainTabBarController {
     private func createVC(_ viewController: UIViewController, title: String, unselectedItemImage: String, selectedImage: String) -> UINavigationController {
-        let viewContoller = UINavigationController(rootViewController: viewController)
+        let viewContoller = MainNavigationController(rootViewController: viewController)
         viewController.tabBarItem = UITabBarItem(
             title: title,
             image: UIImage(systemName: unselectedItemImage),
@@ -61,9 +60,12 @@ extension MainTabBarController {
     }
 }
 
-//extension MainTabBarController: UITabBarControllerDelegate {
-    //    // UITabBarControllerDelegate method
-    //    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    //        print("Selected \(viewController.title!)")
-    //    }
-//}
+// MARK: - TabBarController settings throughout the app
+extension MainTabBarController {
+    private func settingTabBar() {
+        let tabBarAppearance = UITabBar.appearance()
+        tabBarAppearance.backgroundColor = .darkGray
+        tabBarAppearance.unselectedItemTintColor = .white
+        tabBarAppearance.tintColor = .systemBlue
+    }
+}

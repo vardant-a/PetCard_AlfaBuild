@@ -13,6 +13,5 @@ final class CalendarViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .brown
         title = "Calendar"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
