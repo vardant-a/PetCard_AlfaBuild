@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-final class MapViewController: UIViewController, CLLocationManagerDelegate {
+final class MapViewController: UIViewController {
     
     private var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
@@ -23,6 +23,8 @@ final class MapViewController: UIViewController, CLLocationManagerDelegate {
         map.overrideUserInterfaceStyle = .light
         return map
     }()
+    
+    private let locationManager = CLLocationManager()
     
     private let lostPets: [AnimalPlace] = [
         AnimalPlace(
@@ -54,6 +56,12 @@ final class MapViewController: UIViewController, CLLocationManagerDelegate {
         view.addSubview(mapKitView)
         mapKitView.addAnnotations(lostPets)
         setConstraints()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        cheakLocationEnabled()
     }
 }
 
@@ -93,6 +101,82 @@ extension MapViewController: UISearchResultsUpdating {
 }
 
 extension MapViewController {
-    func centerLocation() {
+    private func cheakLocationEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupManager()
+            cheakAuthorization()
+        } else {
+            showAlertLocation(
+                title: "Your location service is disabled",
+                message: "Please open settings and allow PetCard to use your location.",
+                url: URL(string: "App-Prefs:root=LOCATION_SERVICES"))
+        }
+    }
+    
+    private func cheakAuthorization() {
+        let authorizationStatus: CLAuthorizationStatus
+
+        if #available(iOS 14, *) {
+            authorizationStatus = locationManager.authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
+        }
+
+        switch authorizationStatus {
+        case .authorizedAlways:
+            break
+        case .authorizedWhenInUse:
+            mapKitView.showsUserLocation = true
+            locationManager.startUpdatingLocation()
+            break
+        case .denied:
+            showAlertLocation(
+                title: "Access to geolocation is prohibited",
+                message: "Please open settings and allow PetCard to use your location.",
+                url: URL(string: UIApplication.openSettingsURLString)
+            )
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        default:
+            print("case default")
+        }
+    }
+
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: 2000, longitudinalMeters: 2000)
+            mapKitView.setRegion(region, animated: true)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        cheakAuthorization()
+    }
+    
+    private func setupManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+}
+
+// MARK: - Alert for segue in settings
+extension MapViewController {
+    private func showAlertLocation(title: String, message: String?, url: URL?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let settingAction = UIAlertAction(title: "Settings", style: .default) { (alert) in
+            if let url = url {
+                // URL = "App-Prefs:root=LOCATION_SERVICES"
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        let cancelAction = UIAlertAction(title:"Candel", style: .cancel, handler: nil)
+        
+        alert.addAction(settingAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }
