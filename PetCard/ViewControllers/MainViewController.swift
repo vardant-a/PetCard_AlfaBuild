@@ -53,8 +53,6 @@ extension MainViewController {
     @objc func presentNotifications() {
         if conditionNotification {
             let notificationVC = NotificationListViewController()
-            notificationVC.title = "Notifications"
-            notificationVC.view.backgroundColor = .red
             navigationController?
                 .pushViewController(notificationVC, animated: true)
         } else {

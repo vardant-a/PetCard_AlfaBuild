@@ -51,13 +51,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 }
-    
-    // MARK: - TabBarController settings throughout the app
-extension SceneDelegate {
-    private func settingTabBar() {
-        let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.backgroundColor = .darkGray
-        tabBarAppearance.unselectedItemTintColor = .systemGray5
-        tabBarAppearance.tintColor = .systemBlue
-    }
-}

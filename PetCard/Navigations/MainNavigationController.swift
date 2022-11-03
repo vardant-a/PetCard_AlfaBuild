@@ -38,7 +38,7 @@ final class MainNavigationController: UINavigationController {
 
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
-        navigationBar.prefersLargeTitles = true
+        navigationBar.prefersLargeTitles = false
         
     }
     

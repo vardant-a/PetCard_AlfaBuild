@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
@@ -20,10 +21,10 @@
 		0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6B291033510016AB4A /* SettingsViewController.swift */; };
 		0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6D291041940016AB4A /* CalendarViewController.swift */; };
 		0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */; };
-		0EFA571529129B51008C4DC6 /* ThemeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA571429129B51008C4DC6 /* ThemeApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +40,6 @@
 		0EEC7A6B291033510016AB4A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EEC7A6D291041940016AB4A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		0EFA571429129B51008C4DC6 /* ThemeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +53,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0ED5AD742912B20B00042E12 /* Helpers */ = {
+		0E9072EA2912D7AD00BA7800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EEC7A56291026770016AB4A /* PetCard.xcdatamodeld */,
+				0E27DA33291408C900B768C0 /* AnimalPlace.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0ED5AD742912B20B00042E12 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				0ED5AD752912B22600042E12 /* UIColor + extension.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0EEC7A41291026770016AB4A = {
@@ -80,15 +89,12 @@
 		0EEC7A4C291026770016AB4A /* PetCard */ = {
 			isa = PBXGroup;
 			children = (
-				0ED5AD742912B20B00042E12 /* Helpers */,
-				0EFA571329129B45008C4DC6 /* Services */,
 				0EEC7A64291026A20016AB4A /* Application */,
 				0EEC7A65291026C70016AB4A /* Navigations */,
 				0EEC7A68291028970016AB4A /* ViewControllers */,
-				0EEC7A59291026780016AB4A /* Assets.xcassets */,
-				0EEC7A5B291026780016AB4A /* LaunchScreen.storyboard */,
-				0EEC7A5E291026780016AB4A /* Info.plist */,
-				0EEC7A56291026770016AB4A /* PetCard.xcdatamodeld */,
+				0E9072EA2912D7AD00BA7800 /* Models */,
+				0EFA571329129B45008C4DC6 /* Resources */,
+				0ED5AD742912B20B00042E12 /* Extensions */,
 			);
 			path = PetCard;
 			sourceTree = "<group>";
@@ -98,6 +104,8 @@
 			children = (
 				0EEC7A4D291026770016AB4A /* AppDelegate.swift */,
 				0EEC7A4F291026770016AB4A /* SceneDelegate.swift */,
+				0EEC7A5B291026780016AB4A /* LaunchScreen.storyboard */,
+				0EEC7A5E291026780016AB4A /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -123,12 +131,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		0EFA571329129B45008C4DC6 /* Services */ = {
+		0EFA571329129B45008C4DC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0EFA571429129B51008C4DC6 /* ThemeApp.swift */,
+				0EEC7A59291026780016AB4A /* Assets.xcassets */,
 			);
-			path = Services;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +215,9 @@
 				0EEC7A52291026770016AB4A /* MainViewController.swift in Sources */,
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
-				0EFA571529129B51008C4DC6 /* ThemeApp.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
+				0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */,
 				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
 				0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */,
 				0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */,
@@ -353,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G56833V6RD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PetCard/Info.plist;
+				INFOPLIST_FILE = PetCard/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -386,7 +394,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G56833V6RD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PetCard/Info.plist;
+				INFOPLIST_FILE = PetCard/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

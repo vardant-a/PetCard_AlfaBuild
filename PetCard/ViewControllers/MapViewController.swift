@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-final class MapViewController: UIViewController {
+final class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     private var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
@@ -24,23 +24,35 @@ final class MapViewController: UIViewController {
         return map
     }()
     
-    private let coordinateUser = CLLocationCoordinate2D(
-        latitude: 40.728,
-        longitude: -74
-    )
+    private let lostPets: [AnimalPlace] = [
+        AnimalPlace(
+            animalName: "Ray",
+            numberMaster: "+7-904",
+            coordinate: CLLocationCoordinate2D(
+                latitude: 55.729957,
+                longitude: 37.418530)
+        ),
+        AnimalPlace(
+            animalName: "Box",
+            numberMaster: "+7-999",
+            coordinate: CLLocationCoordinate2D(
+                latitude: 37.418530,
+                longitude: 55.729957)
+        ),
+        AnimalPlace(
+            animalName: "Mysia",
+            numberMaster: "+7-961",
+            coordinate: CLLocationCoordinate2D(
+                latitude: 33.729957,
+                longitude: 37.418530)
+        )
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
-        
         view.addSubview(mapKitView)
-        mapKitView.setRegion(MKCoordinateRegion(
-            center: coordinateUser,
-            span: MKCoordinateSpan(
-                latitudeDelta: 0.1,
-                longitudeDelta: 0.1)),
-            animated: false
-        )
+        mapKitView.addAnnotations(lostPets)
         setConstraints()
     }
 }
@@ -50,6 +62,7 @@ extension MapViewController {
     private func setNavBar() {
         title = "Animal Map"
         navigationItem.searchController = searchController
+        
         searchController.searchResultsUpdater = self
     }
 }
@@ -60,7 +73,7 @@ extension MapViewController {
         mapKitView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mapKitView.topAnchor.constraint(equalTo: view.topAnchor),
-            mapKitView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            mapKitView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             mapKitView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapKitView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
@@ -76,5 +89,10 @@ extension MapViewController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
+    }
+}
+
+extension MapViewController {
+    func centerLocation() {
     }
 }

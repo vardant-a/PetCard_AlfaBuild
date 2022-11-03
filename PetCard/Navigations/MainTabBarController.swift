@@ -44,7 +44,6 @@ final class MainTabBarController: UITabBarController {
         
         self.viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
     }
-    
 }
 
 // MARK: - Create VC and TabBarItem
