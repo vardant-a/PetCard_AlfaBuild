@@ -102,14 +102,16 @@ extension MapViewController: UISearchResultsUpdating {
 
 extension MapViewController {
     private func cheakLocationEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            setupManager()
-            cheakAuthorization()
-        } else {
-            showAlertLocation(
-                title: "Your location service is disabled",
-                message: "Please open settings and allow PetCard to use your location.",
-                url: URL(string: "App-Prefs:root=LOCATION_SERVICES"))
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.setupManager()
+                self.cheakAuthorization()
+            } else {
+                self.showAlertLocation(
+                    title: "Your location service is disabled",
+                    message: "Please open settings and allow PetCard to use your location.",
+                    url: URL(string: "App-Prefs:root=LOCATION_SERVICES"))
+            }
         }
     }
     

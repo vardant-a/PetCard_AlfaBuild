@@ -22,13 +22,13 @@ class AnimalPlace: NSObject, MKAnnotation {
     }
     
     var title: String? {
-        if let name = animalName as? String {
+        if let name = animalName {
             return "Lost \(name)"
         } else { return nil }
     }
     
     var subtitle: String? {
-        if let number = numberMaster as? String {
+        if let number = numberMaster {
             return "If you see him please call \(number)"
         } else { return nil }
     }
