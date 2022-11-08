@@ -11,14 +11,17 @@ import CoreLocation
 
 final class MapViewController: UIViewController {
     
-    private var searchController: UISearchController = {
+    // MARK: - Private properties
+    // SeachController
+    private lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.placeholder = "Search animal"
         search.searchBar.tintColor = .systemBlue
         return search
     }()
     
-    private var mapKitView: MKMapView = {
+    // MapKit
+    private lazy var mapKitView: MKMapView = {
         let map = MKMapView()
         map.overrideUserInterfaceStyle = .light
         return map
@@ -26,34 +29,15 @@ final class MapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     
-    private let lostPets: [AnimalPlace] = [
-        AnimalPlace(
-            animalName: "Ray",
-            numberMaster: "+7-904",
-            coordinate: CLLocationCoordinate2D(
-                latitude: 55.729957,
-                longitude: 37.418530)
-        ),
-        AnimalPlace(
-            animalName: "Box",
-            numberMaster: "+7-999",
-            coordinate: CLLocationCoordinate2D(
-                latitude: 37.418530,
-                longitude: 55.729957)
-        ),
-        AnimalPlace(
-            animalName: "Mysia",
-            numberMaster: "+7-961",
-            coordinate: CLLocationCoordinate2D(
-                latitude: 33.729957,
-                longitude: 37.418530)
-        )
-    ]
+    private let lostPets = LostAnimal.shared.lostAnimals
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setNavBar()
         view.addSubview(mapKitView)
+        
+        mapKitView.delegate = self
         mapKitView.addAnnotations(lostPets)
         setConstraints()
     }
@@ -171,7 +155,6 @@ extension MapViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let settingAction = UIAlertAction(title: "Settings", style: .default) { (alert) in
             if let url = url {
-                // URL = "App-Prefs:root=LOCATION_SERVICES"
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
@@ -181,4 +164,25 @@ extension MapViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
+}
+
+extension MapViewController: MKMapViewDelegate {
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        guard let annotation = annotation as? AnimalPlace else { return nil }
+//        var viewMarker: MKMarkerAnnotationView
+//        let idView = "marker"
+//        if let view = mapView.dequeueReusableAnnotationView(withIdentifier: idView) as? MKMarkerAnnotationView {
+//            view.annotation = annotation
+//            viewMarker = view
+//        } else {
+//            viewMarker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: idView)
+//            viewMarker.canShowCallout = true
+//            viewMarker.calloutOffset = CGPoint(x: 0, y: 1.5)
+//            let detailMarkerView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 50))
+//            detailMarkerView.backgroundColor = .green
+//            viewMarker.leftCalloutAccessoryView = detailMarkerView
+////            viewMarker.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//        }
+//        return viewMarker
+//    }
 }

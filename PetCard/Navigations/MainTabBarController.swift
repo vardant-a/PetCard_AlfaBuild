@@ -12,37 +12,8 @@ final class MainTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        createTabBar()
         settingTabBar()
-        
-        let homeVC = createVC(
-            MainViewController(),
-            title: "Home",
-            unselectedItemImage: "house",
-            selectedImage: "house.fill"
-        )
-        
-        let calendarVC = createVC(
-            CalendarViewController(),
-            title: "Calendar",
-            unselectedItemImage: "calendar",
-            selectedImage: "calendar.badge.clock"
-        )
-        
-        let mapVC = createVC(
-            MapViewController(),
-            title: "Animal Map",
-            unselectedItemImage: "globe.asia.australia",
-            selectedImage: "globe.asia.australia.fill"
-        )
-        
-        let settingsVC = createVC(
-            SettingsViewController(),
-            title: "Settings",
-            unselectedItemImage: "gear",
-            selectedImage: "gearshape.fill"
-        )
-        
-        self.viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
     }
 }
 
@@ -66,5 +37,39 @@ extension MainTabBarController {
         tabBarAppearance.backgroundColor = .navColor
         tabBarAppearance.unselectedItemTintColor = .systemGray
         tabBarAppearance.tintColor = .systemBlue
+    }
+}
+// MARK: - Create collections VC for TabBar
+extension MainTabBarController {
+    private func createTabBar() {
+        let homeVC = createVC(
+            HomeViewController(),
+            title: "Home",
+            unselectedItemImage: "house",
+            selectedImage: "house.fill"
+        )
+        
+        let calendarVC = createVC(
+            CalendarViewController(),
+            title: "Calendar",
+            unselectedItemImage: "calendar",
+            selectedImage: "calendar.badge.clock"
+        )
+        
+        let mapVC = createVC(
+            MapViewController(),
+            title: "Animal Map",
+            unselectedItemImage: "globe.asia.australia",
+            selectedImage: "globe.asia.australia.fill"
+        )
+        
+        let settingsVC = createVC(
+            ProfileViewController(),
+            title: "Profile",
+            unselectedItemImage: "person",
+            selectedImage: "person.fill"
+        )
+        
+        self.viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
     }
 }

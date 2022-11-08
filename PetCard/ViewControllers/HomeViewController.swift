@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  HomeController.swift
 //  PetCard
 //
 //  Created by Алексей on 21.10.2022.
 //
 
 import UIKit
+import AVFoundation
 
-final class MainViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     private lazy var conditionNotification = true
     
@@ -47,33 +48,21 @@ final class MainViewController: UIViewController {
 
 }
 
-// MARK: - @Objc Methods for BarButtonItem
 
-extension MainViewController {
-    @objc func presentNotifications() {
-        if conditionNotification {
-            let notificationVC = NotificationListViewController()
-            navigationController?
-                .pushViewController(notificationVC, animated: true)
-        } else {
-            print("Notifications not found")
-        }
-    }
-}
     // MARK: - Settings NavigationController
 
-extension MainViewController {
+extension HomeViewController {
     private func setNavController() {
-        let navBarItem = createNavBarItem()
-        
         title = "Home"
+        
+        let navBarItem = createNavBarItem("qrcode.viewfinder")
         navigationItem.rightBarButtonItem = navBarItem
     }
 }
 
     // MARK: - Setting for button switch notification
 
-extension MainViewController {
+extension HomeViewController {
     private func setSwitchButton() {
         view.addSubview(switchNotifButton)
         
@@ -86,19 +75,14 @@ extension MainViewController {
 
     // MARK: - Create custom NavigationBarItem
 
-extension MainViewController {
-    private func createNavBarItem() -> UIBarButtonItem {
-        let notifImage = UIImage(
-            systemName: conditionNotification
-            ? "bell.badge.fill"
-            : "bell"
-        )
-        
+extension HomeViewController {
+    private func createNavBarItem(_ systemName: String) -> UIBarButtonItem {
+        let notifImage = UIImage(systemName: systemName)
         let navBarItem = UIBarButtonItem(
             image: notifImage,
             style: .plain,
             target: self,
-            action: #selector(presentNotifications)
+            action: #selector(startScanQRCode)
          )
         
         return navBarItem
@@ -107,7 +91,7 @@ extension MainViewController {
 
     // MARK: - Create Button
 
-extension MainViewController {
+extension HomeViewController {
     private func createButton(withTitle title: String, andColor color: UIColor, action: UIAction?) -> UIButton {
         let button = UIButton()
         if #available(iOS 15.0, *) {
@@ -127,10 +111,10 @@ extension MainViewController {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.backgroundColor = color
             button.layer.cornerRadius = 20
-            button.addTarget(self, action: #selector(test), for: .touchUpInside)
+            button.addTarget(self, action: #selector(startScanQRCode), for: .touchUpInside)
             return button
         }
     }
     
-    @objc func test() {}
+    @objc func startScanQRCode() {}
 }

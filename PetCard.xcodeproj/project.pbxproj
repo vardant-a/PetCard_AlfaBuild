@@ -12,13 +12,13 @@
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
 		0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4F291026770016AB4A /* SceneDelegate.swift */; };
-		0EEC7A52291026770016AB4A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A51291026770016AB4A /* MainViewController.swift */; };
+		0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A51291026770016AB4A /* HomeViewController.swift */; };
 		0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A56291026770016AB4A /* PetCard.xcdatamodeld */; };
 		0EEC7A5A291026780016AB4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EEC7A59291026780016AB4A /* Assets.xcassets */; };
 		0EEC7A5D291026780016AB4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EEC7A5B291026780016AB4A /* LaunchScreen.storyboard */; };
 		0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A66291026DF0016AB4A /* MainTabBarController.swift */; };
 		0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A69291028D90016AB4A /* MapViewController.swift */; };
-		0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6B291033510016AB4A /* SettingsViewController.swift */; };
+		0EEC7A6C291033510016AB4A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6B291033510016AB4A /* ProfileViewController.swift */; };
 		0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6D291041940016AB4A /* CalendarViewController.swift */; };
 		0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
@@ -30,14 +30,14 @@
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEC7A4D291026770016AB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEC7A4F291026770016AB4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EEC7A51291026770016AB4A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0EEC7A51291026770016AB4A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0EEC7A57291026770016AB4A /* PetCard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetCard.xcdatamodel; sourceTree = "<group>"; };
 		0EEC7A59291026780016AB4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EEC7A5C291026780016AB4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EEC7A5E291026780016AB4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EEC7A66291026DF0016AB4A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		0EEC7A69291028D90016AB4A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		0EEC7A6B291033510016AB4A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0EEC7A6B291033510016AB4A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0EEC7A6D291041940016AB4A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,10 +122,10 @@
 		0EEC7A68291028970016AB4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0EEC7A51291026770016AB4A /* MainViewController.swift */,
+				0EEC7A51291026770016AB4A /* HomeViewController.swift */,
 				0EEC7A6D291041940016AB4A /* CalendarViewController.swift */,
 				0EEC7A69291028D90016AB4A /* MapViewController.swift */,
-				0EEC7A6B291033510016AB4A /* SettingsViewController.swift */,
+				0EEC7A6B291033510016AB4A /* ProfileViewController.swift */,
 				0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -212,14 +212,14 @@
 				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,
 				0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */,
-				0EEC7A52291026770016AB4A /* MainViewController.swift in Sources */,
+				0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */,
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
 				0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */,
 				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
-				0EEC7A6C291033510016AB4A /* SettingsViewController.swift in Sources */,
+				0EEC7A6C291033510016AB4A /* ProfileViewController.swift in Sources */,
 				0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
