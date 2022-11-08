@@ -7,18 +7,12 @@
 
 import UIKit
 
+
+
+
 final class NotificationListViewController: UIViewController {
     
-    private lazy var notificationList1: [String: String] = [:]
-    private lazy var notificationList = [
-        "29.10.2022": "1",
-        "30.10.2022": "2",
-        "31.10.2022": "3",
-        "01.11.2022": "4",
-        "02.11.2022": "5",
-        "03.11.2022": "6",
-        "04.11.2022": "7",
-    ]
+    private lazy var notificationList = Notification.getList(TestNotifDate.shared.sortNotifList())
     
     private lazy var imageView: UIImageView = {
        let imageView = UIImageView()
@@ -49,40 +43,33 @@ final class NotificationListViewController: UIViewController {
         
         vStack.addArrangedSubview(imageView)
         vStack.addArrangedSubview(labelView)
-        
         return vStack
     }()
     
     private lazy var contentUITableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     
    // MARK: - Override methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavController()
+        title = "Notifications"
         view.backgroundColor = .systemBackground
         setContentView()
     }
 }
 
- // MARK: - Settings NavigationController
-extension NotificationListViewController {
-    private func setNavController() {
-        title = "Notifications"
-    }
-}
-
 extension NotificationListViewController {
     private func setContentView() {
-        notificationList1.isEmpty
-        ? setContentImage()
+        notificationList.isEmpty
+        ? setContentStack()
         : setContentTableView()
     }
 
-    private func setContentImage() {
+    private func setContentStack() {
         view.addSubview(vStack)
         
         vStack.translatesAutoresizingMaskIntoConstraints = false
@@ -91,9 +78,39 @@ extension NotificationListViewController {
             vStack.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
+}
+
+// MARK: Content setting in UITableView
+extension NotificationListViewController: UITableViewDelegate, UITableViewDataSource {
+    // Получим количество секций в таблице
+    func numberOfSections(in tableView: UITableView) -> Int {
+        notificationList.count
+    }
+    
+    // Получим заголовок для секции
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+         notificationList[section].datе
+     }
+    
+    // Получим количество строк для конкретной секции
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        notificationList[section].description.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = notificationList[indexPath.section].description[indexPath.row]
+        
+        cell.contentConfiguration = content
+        return cell
+    }
     
     private func setContentTableView() {
         view.addSubview(contentUITableView)
+        contentUITableView.delegate = self
+        contentUITableView.dataSource = self
+
         
         contentUITableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -102,6 +119,5 @@ extension NotificationListViewController {
             contentUITableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentUITableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        
     }
 }

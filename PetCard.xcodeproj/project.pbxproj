@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E23F405291AEB60003CE686 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23F404291AEB60003CE686 /* Notification.swift */; };
 		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E23F404291AEB60003CE686 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				0EEC7A56291026770016AB4A /* PetCard.xcdatamodeld */,
 				0E27DA33291408C900B768C0 /* AnimalPlace.swift */,
+				0E23F404291AEB60003CE686 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
+				0E23F405291AEB60003CE686 /* Notification.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
 				0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */,
 				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
