@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-
-
 final class NotificationListViewController: UIViewController {
     
     private lazy var notificationList = Notification.getList(TestNotifDate.shared.sortNotifList())
@@ -50,6 +47,7 @@ final class NotificationListViewController: UIViewController {
         let tableView = UITableView(frame: view.bounds, style: .insetGrouped)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -57,19 +55,19 @@ final class NotificationListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Notifications"
-        view.backgroundColor = .systemBackground
-        setContentView()
+
+        setViewContent()
     }
 }
-
+// MARK: - Set View content
 extension NotificationListViewController {
-    private func setContentView() {
+    private func setViewContent() {
         notificationList.isEmpty
-        ? setContentStack()
-        : setContentTableView()
+        ? setStackContent()
+        : setTableViewContent()
     }
 
-    private func setContentStack() {
+    private func setStackContent() {
         view.addSubview(vStack)
         
         vStack.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +95,7 @@ extension NotificationListViewController: UITableViewDelegate, UITableViewDataSo
         notificationList[section].description.count
     }
     
+    // Отображение данных уведомлений в строке
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var content = cell.defaultContentConfiguration()
@@ -106,12 +105,12 @@ extension NotificationListViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    private func setContentTableView() {
+    // MARK: - Set TableView content
+    private func setTableViewContent() {
         view.addSubview(contentUITableView)
         contentUITableView.delegate = self
         contentUITableView.dataSource = self
 
-        
         contentUITableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentUITableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
