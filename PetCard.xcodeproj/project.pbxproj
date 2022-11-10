@@ -10,6 +10,8 @@
 		0E23F405291AEB60003CE686 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23F404291AEB60003CE686 /* Notification.swift */; };
 		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
+		0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */; };
+		0E8242D3291D457000D7F99D /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8242D2291D457000D7F99D /* UIButton + extension.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
 		0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4F291026770016AB4A /* SceneDelegate.swift */; };
@@ -28,6 +30,8 @@
 		0E23F404291AEB60003CE686 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalInfoView.swift; sourceTree = "<group>"; };
+		0E8242D2291D457000D7F99D /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEC7A4D291026770016AB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				0ED5AD752912B22600042E12 /* UIColor + extension.swift */,
+				0E8242D2291D457000D7F99D /* UIButton + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				0EEC7A69291028D90016AB4A /* MapViewController.swift */,
 				0EEC7A6B291033510016AB4A /* ProfileViewController.swift */,
 				0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */,
+				0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
+				0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,
 				0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */,
 				0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */,
@@ -225,6 +232,7 @@
 				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
 				0EEC7A6C291033510016AB4A /* ProfileViewController.swift in Sources */,
 				0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */,
+				0E8242D3291D457000D7F99D /* UIButton + extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vardant-Coding.PetCard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -410,7 +418,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vardant-Coding.PetCard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
