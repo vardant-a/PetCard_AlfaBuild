@@ -34,7 +34,7 @@ extension MainTabBarController {
 extension MainTabBarController {
     private func settingTabBar() {
         let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.backgroundColor = .navColor
+        tabBarAppearance.backgroundColor = .barColor
         tabBarAppearance.unselectedItemTintColor = .systemGray
         tabBarAppearance.tintColor = .systemBlue
     }
@@ -59,8 +59,8 @@ extension MainTabBarController {
         let mapVC = createVC(
             MapViewController(),
             title: "Animal Map",
-            unselectedItemImage: "globe.asia.australia",
-            selectedImage: "globe.asia.australia.fill"
+            unselectedItemImage: setItem(oldImage: "globe", newImage: "globe.europe.africa"),
+            selectedImage: setItem(oldImage: "globe", newImage: "globe.europe.africa.fill")
         )
         
         let settingsVC = createVC(
@@ -71,5 +71,13 @@ extension MainTabBarController {
         )
         
         self.viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
+    }
+    
+    private func setItem(oldImage forOldVersionIOS: String, newImage forNewVersionIOS: String) -> String {
+        if #available(iOS 15.0, *) {
+            return forNewVersionIOS
+        } else {
+            return forOldVersionIOS
+        }
     }
 }

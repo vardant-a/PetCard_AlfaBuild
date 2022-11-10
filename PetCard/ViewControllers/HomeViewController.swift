@@ -110,11 +110,14 @@ extension HomeViewController {
             button.setTitle(title, for: .normal)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.backgroundColor = color
-            button.layer.cornerRadius = 20
+            button.layer.cornerRadius = 8
             button.addTarget(self, action: #selector(startScanQRCode), for: .touchUpInside)
+            
             return button
         }
     }
     
-    @objc func startScanQRCode() {}
+    @objc func startScanQRCode() {
+        print("test")
+    }
 }

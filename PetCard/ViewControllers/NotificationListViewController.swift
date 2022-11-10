@@ -55,8 +55,12 @@ final class NotificationListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Notifications"
-
         setViewContent()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
     }
 }
 // MARK: - Set View content

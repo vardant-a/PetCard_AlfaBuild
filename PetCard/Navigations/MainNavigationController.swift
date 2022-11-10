@@ -22,7 +22,7 @@ final class MainNavigationController: UINavigationController {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .navColor
+        appearance.backgroundColor = .barColor
         
 //        appearance.titleTextAttributes = [
 //            .foregroundColor: УСЛОВИЕ

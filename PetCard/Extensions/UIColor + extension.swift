@@ -9,5 +9,5 @@ import UIKit
 
 extension UIColor {
     
-    static let navColor = UIColor(named: "NavBackgroundColor")
+    static let barColor = UIColor(named: "NavBackgroundColor")
 }

@@ -10,17 +10,17 @@ import UIKit
 extension UIButton {
     // MARK: - Create Button
     
-    static func createButton(withTitle title: String, andColor color: UIColor, action: UIAction?, cornerRadius: Double = 12) -> UIButton {
+    static func createSystemButton(_ target: Any?, withTitle title: String, andColor color: UIColor, action: UIAction?, objcAction: Selector) -> UIButton {
         let button = UIButton()
         if #available(iOS 15.0, *) {
             var butAttrubures = AttributeContainer()
-            butAttrubures.font = UIFont.boldSystemFont(ofSize: 18)
+            butAttrubures.font = UIFont.boldSystemFont(ofSize: 17)
             
             var buttonConfiguration = UIButton.Configuration.filled()
             buttonConfiguration.title = title
-            buttonConfiguration.baseBackgroundColor = color
-            buttonConfiguration.background.cornerRadius = cornerRadius
-            
+            buttonConfiguration.baseForegroundColor = color
+            buttonConfiguration.baseBackgroundColor = .barColor ?? .systemGray
+            buttonConfiguration.background.cornerRadius = 8
             
             return UIButton(
                 configuration: buttonConfiguration,
@@ -28,11 +28,13 @@ extension UIButton {
             )
         } else {
             button.setTitle(title, for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = color
-            button.layer.cornerRadius = cornerRadius
-//            button.addTarget(self, action: #selector(startScanQRCode), for: .touchUpInside)
+            button.backgroundColor = .barColor ?? .systemGray
+            button.tintColor = .red
+            button.layer.cornerRadius = 8
+            button.addTarget(target, action: objcAction, for: .touchUpInside)
             return button
         }
     }
+    
+    @objc func test() {}
 }

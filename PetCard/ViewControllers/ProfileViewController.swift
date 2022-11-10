@@ -11,12 +11,13 @@ final class ProfileViewController: UIViewController {
     
     // MARK: - Private lazy properties
     
-    private lazy var logOutButton = UIButton.createButton(
-            withTitle: "LogOut",
+    private lazy var logOutButton = UIButton.createSystemButton(self,
+            withTitle: "Log Out",
             andColor: .systemRed,
             action: UIAction { _ in
-                print("LogOut")
-            }
+                print("Log Out")
+            },
+            objcAction: #selector(logOutTest)
         )
         
     private lazy var versionAppLabel: UILabel = {
@@ -37,6 +38,16 @@ final class ProfileViewController: UIViewController {
         view.addSubview(versionAppLabel)
         view.addSubview(logOutButton)
         setConstrains()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    // MARK: - @Objc methods
+    @objc func logOutTest() {
+        print("Log Out")
     }
 }
     // MARK: - Setting NavigationController
@@ -86,9 +97,10 @@ extension ProfileViewController {
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            logOutButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 450),
+            logOutButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 570),
+            logOutButton.heightAnchor.constraint(equalToConstant: 44),
             logOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16)
+            logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
         // constrains versionAppLabel
@@ -96,7 +108,7 @@ extension ProfileViewController {
         
         NSLayoutConstraint.activate([
             versionAppLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            versionAppLabel.topAnchor.constraint(equalTo: logOutButton.bottomAnchor)
+            versionAppLabel.topAnchor.constraint(equalTo: logOutButton.bottomAnchor, constant: 20)
         ])
     }
 }
