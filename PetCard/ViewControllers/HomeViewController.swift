@@ -69,7 +69,9 @@ extension HomeViewController {
         switchNotifButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             switchNotifButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            switchNotifButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+            switchNotifButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            switchNotifButton.heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
 }
 

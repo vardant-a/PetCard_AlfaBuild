@@ -26,6 +26,7 @@ final class ProfileViewController: UIViewController {
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         label.text = "Application version - \(appVersion ?? "xxx")"
         label.textColor = UIColor.systemGray
+        label.font = UIFont.systemFont(ofSize: 11)
         return label
     }()
     
@@ -34,7 +35,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavController()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .backgroundColor ?? .systemBackground
         view.addSubview(versionAppLabel)
         view.addSubview(logOutButton)
         setConstrains()

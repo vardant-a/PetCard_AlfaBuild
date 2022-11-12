@@ -19,7 +19,7 @@ extension UIButton {
             var buttonConfiguration = UIButton.Configuration.filled()
             buttonConfiguration.title = title
             buttonConfiguration.baseForegroundColor = color
-            buttonConfiguration.baseBackgroundColor = .barColor ?? .systemGray
+            buttonConfiguration.baseBackgroundColor = .regularButtonColor ?? .white
             buttonConfiguration.background.cornerRadius = 8
             
             return UIButton(

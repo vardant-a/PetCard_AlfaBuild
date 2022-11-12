@@ -10,4 +10,6 @@ import UIKit
 extension UIColor {
     
     static let barColor = UIColor(named: "NavBackgroundColor")
+    static let backgroundColor = UIColor(named: "BackgroudAppColor")
+    static let regularButtonColor = UIColor(named: "RegularButtonColor")
 }

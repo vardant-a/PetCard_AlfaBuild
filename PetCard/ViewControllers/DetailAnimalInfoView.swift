@@ -5,23 +5,6 @@
 //  Created by Алексей on 10.11.2022.
 //
 
-struct Animal {
-    let image: String?
-    let name: String
-    let breed: String
-    let color: String
-    let ownerNumber: String
-    
-    static func getAnimalLost() -> Animal {
-        return Animal(
-            image: "1",
-            name: "Ray",
-            breed: "doberman",
-            color: "black",
-            ownerNumber: "+7-999-495-17-72"
-        )
-    }
-}
 
 import SwiftUI
 
@@ -48,6 +31,11 @@ struct InfoCardView: View {
                         Text("Name:")
                             .fontWeight(.semibold)
                         Text(animal.name)
+                    }
+                    HStack {
+                        Text("Class")
+                            .fontWeight(.semibold)
+                        Text(animal.anymalType.rawValue)
                     }
                     HStack {
                         Text("Breed:")

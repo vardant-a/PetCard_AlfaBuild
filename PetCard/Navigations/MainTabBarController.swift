@@ -70,7 +70,7 @@ extension MainTabBarController {
             selectedImage: "person.fill"
         )
         
-        self.viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
+        viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
     }
     
     private func setItem(oldImage forOldVersionIOS: String, newImage forNewVersionIOS: String) -> String {

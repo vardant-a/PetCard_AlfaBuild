@@ -8,13 +8,16 @@
 import UIKit
 
 final class MainNavigationController: UINavigationController {
+    
+    // MARK: - Settings StatusBarStyle
 
     private var osTheme: UIUserInterfaceStyle {
         return UIScreen.main.traitCollection.userInterfaceStyle
     }
     
     override internal var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle(rawValue: (topViewController?.preferredStatusBarStyle)!.rawValue) ?? .default
+        return UIStatusBarStyle(
+            rawValue: (topViewController?.preferredStatusBarStyle)!.rawValue) ?? .default
     }
     
     public override init(rootViewController: UIViewController) {
