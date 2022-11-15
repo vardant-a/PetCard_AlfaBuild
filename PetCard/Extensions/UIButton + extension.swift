@@ -11,7 +11,6 @@ extension UIButton {
     // MARK: - Create Button
     
     static func createSystemButton(_ target: Any?, withTitle title: String, andColor color: UIColor, action: UIAction?, objcAction: Selector) -> UIButton {
-        let button = UIButton()
         if #available(iOS 15.0, *) {
             var butAttrubures = AttributeContainer()
             butAttrubures.font = UIFont.boldSystemFont(ofSize: 17)
@@ -27,6 +26,7 @@ extension UIButton {
                 primaryAction: action
             )
         } else {
+            let button = UIButton()
             button.setTitle(title, for: .normal)
             button.backgroundColor = .barColor ?? .systemGray
             button.tintColor = .red
@@ -35,6 +35,4 @@ extension UIButton {
             return button
         }
     }
-    
-    @objc func test() {}
 }

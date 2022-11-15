@@ -12,28 +12,16 @@ final class HomeViewController: UIViewController {
     
     private lazy var conditionNotification = true
     
-    private lazy var switchNotifButton = createButton(
+    // MARK: - Private lazy properties
+    
+    private lazy var switchNotifButton = UIButton.createSystemButton(self,
         withTitle: "Switch Notification",
         andColor: .systemBlue,
-        action: UIAction {  _ in
-            self.conditionNotification.toggle()
-            print(self.conditionNotification)
-        }
+        action: UIAction { [unowned self] _ in
+            switchNotifStatus()
+                },
+        objcAction: #selector(switchNotifStatusOLD)
     )
-    //    : UIButton = {
-    //        let button = UIButton()
-    //        button.backgroundColor = .systemBlue
-    //        button.setTitle("Switch Notification", for: .normal)
-    //        return button
-    //    }()
-    
-    private lazy var testButton = createButton(
-        withTitle: "test",
-        andColor: .black,
-        action: UIAction { _ in print("1") }
-    )
-    
-    
     
     // MARK: - Ovveride Methods
     
@@ -44,13 +32,9 @@ final class HomeViewController: UIViewController {
         setNavController()
         setSwitchButton()
     }
-    
-
 }
 
-
     // MARK: - Settings NavigationController
-
 extension HomeViewController {
     private func setNavController() {
         title = "Home"
@@ -76,7 +60,6 @@ extension HomeViewController {
 }
 
     // MARK: - Create custom NavigationBarItem
-
 extension HomeViewController {
     private func createNavBarItem(_ systemName: String) -> UIBarButtonItem {
         let notifImage = UIImage(systemName: systemName)
@@ -91,32 +74,17 @@ extension HomeViewController {
     }
 }
 
-    // MARK: - Create Button
-
+    // MARK: - Button Methods
 extension HomeViewController {
-    private func createButton(withTitle title: String, andColor color: UIColor, action: UIAction?) -> UIButton {
-        let button = UIButton()
-        if #available(iOS 15.0, *) {
-            var butAttrubures = AttributeContainer()
-            butAttrubures.font = UIFont.boldSystemFont(ofSize: 18)
-            
-            var buttonConfiguration = UIButton.Configuration.filled()
-            buttonConfiguration.title = title
-            buttonConfiguration.background.cornerRadius = 20
-            
-            return UIButton(
-                configuration: buttonConfiguration,
-                primaryAction: action
-            )
-        } else {
-            button.setTitle(title, for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.backgroundColor = color
-            button.layer.cornerRadius = 8
-            button.addTarget(self, action: #selector(startScanQRCode), for: .touchUpInside)
-            
-            return button
-        }
+    
+    private func switchNotifStatus() {
+        conditionNotification.toggle()
+        print(conditionNotification)
+    }
+    
+    @objc func switchNotifStatusOLD() {
+        conditionNotification.toggle()
+        print(conditionNotification)
     }
     
     @objc func startScanQRCode() {
