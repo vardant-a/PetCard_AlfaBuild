@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Private lazy properties
     
     private lazy var hostingController: UIHostingController = {
-        let hostingController = UIHostingController(rootView: MainView())
+        let hostingController = UIHostingController(rootView: CardStackView())
         if #available(iOS 16.0, *) {
             hostingController.sizingOptions = .preferredContentSize
         } else {

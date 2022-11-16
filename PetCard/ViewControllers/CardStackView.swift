@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  CardStackView.swift
 //  PetCard
 //
 //  Created by Алексей on 16.11.2022.
@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct CardStackView: View {
     private let cardList: [String] = []
+    @State private var isShowAddAnimalView = false
     @State private var faceUp = false
     var body: some View {
         if cardList.isEmpty {
-            Button(action: {}) {
+            Button(action: { isShowAddAnimalView.toggle() }) {
                 Image(systemName: "plus.circle")
                     .resizable()
                     .frame(width:100, height: 100)
                 .frame(width: 348.829195, height: 220)
-                .background(Color.orange)
+                .background(Color.init("NavBackgroundColor"))
                 .cornerRadius(14.74)
             }
+            .sheet(isPresented: $isShowAddAnimalView, content: { AddAnimalView() })
         } else {
             CardView(faceUp: $faceUp)
         }
@@ -72,9 +74,9 @@ struct CardView: View {
 }
 
 
-struct MainView_Previews: PreviewProvider {
+struct CardStackView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        CardStackView()
     }
 }
 
