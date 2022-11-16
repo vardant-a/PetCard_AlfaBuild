@@ -8,27 +8,51 @@
 import SwiftUI
 
 struct CardStackView: View {
-    private let cardList: [String] = []
-    @State private var isShowAddAnimalView = false
+    // состояние кард листа необходимо получать из родительского ViewControllera
+    var cardList: [String] = ["1"]
+    @State private var showingAddAnimalView = false
     @State private var faceUp = false
     var body: some View {
         if cardList.isEmpty {
-            Button(action: { isShowAddAnimalView.toggle() }) {
-                Image(systemName: "plus.circle")
-                    .resizable()
-                    .frame(width:100, height: 100)
-                .frame(width: 348.829195, height: 220)
-                .background(Color.init("NavBackgroundColor"))
-                .cornerRadius(14.74)
-            }
-            .sheet(isPresented: $isShowAddAnimalView, content: { AddAnimalView() })
+            AddAnimalButton()
         } else {
-            CardView(faceUp: $faceUp)
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: { showingAddAnimalView.toggle() }) {
+                            Image(systemName: "plus.rectangle.fill.on.rectangle.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .rotationEffect(.degrees(180), anchor: .center)
+                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                            .padding(.trailing)
+                    }
+                    .sheet(isPresented: $showingAddAnimalView, content: { AddAnimalView() })
+                }
+                .padding(.top)
+                Spacer()
+                AnimalCardView(faceUp: $faceUp)
+                Spacer()
+            }
         }
+    }
+    
+    // MARK: - Create Button for Adding first AnimalCard
+    @ViewBuilder
+    private func AddAnimalButton() -> some View {
+        Button(action: { showingAddAnimalView.toggle() }) {
+            Image(systemName: "plus.circle")
+                .resizable()
+                .frame(width:100, height: 100)
+            .frame(width: 348.829195, height: 220)
+            .background(Color.init("NavBackgroundColor"))
+            .cornerRadius(14.74)
+        }
+        .sheet(isPresented: $showingAddAnimalView, content: { AddAnimalView() })
     }
 }
 
-struct CardView: View {
+struct AnimalCardView: View {
     @Binding var faceUp: Bool
     var body: some View {
         if faceUp {
@@ -79,19 +103,3 @@ struct CardStackView_Previews: PreviewProvider {
         CardStackView()
     }
 }
-
-
-struct Tools : Identifiable {
-    var id: Int
-    var name: String
-    var offset: CGFloat
-    var place: Int
-}
-
-var design_tools = [
-    Tools(id: 0, name: "Sketch", offset: 0, place: 1),
-    Tools(id: 1, name: "Figma", offset: 0, place: 2),
-    Tools(id: 2, name: "xCode", offset: 0, place: 3),
-    Tools(id: 3, name: "Ilustrator", offset: 0, place: 4),
-    Tools(id: 4, name: "Word Office", offset: 0, place: 5)
-]
