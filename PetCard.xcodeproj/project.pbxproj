@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E1167F7292023EC00A35CFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1167F6292023EC00A35CFC /* User.swift */; };
+		0E233496292518410020BA0B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E233495292518410020BA0B /* MainView.swift */; };
 		0E23F405291AEB60003CE686 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23F404291AEB60003CE686 /* Notification.swift */; };
 		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0E1167F6292023EC00A35CFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0E233495292518410020BA0B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0E23F404291AEB60003CE686 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				0EEC7A6B291033510016AB4A /* ProfileViewController.swift */,
 				0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */,
 				0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */,
+				0E233495292518410020BA0B /* MainView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */,
+				0E233496292518410020BA0B /* MainView.swift in Sources */,
 				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
 				0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,

@@ -6,31 +6,53 @@
 //
 
 import UIKit
-import AVFoundation
+import SwiftUI
 
 final class HomeViewController: UIViewController {
     
-    private lazy var conditionNotification = true
+    private var conditionNotification = true
     
     // MARK: - Private lazy properties
     
-    private lazy var switchNotifButton = UIButton.createSystemButton(self,
-        withTitle: "Switch Notification",
-        andColor: .systemBlue,
-        action: UIAction { [unowned self] _ in
-            switchNotifStatus()
-                },
-        objcAction: #selector(switchNotifStatusOLD)
-    )
+    private lazy var hostingController: UIHostingController = {
+        let hostingController = UIHostingController(rootView: MainView())
+        if #available(iOS 16.0, *) {
+            hostingController.sizingOptions = .preferredContentSize
+        } else {
+            // Fallback on earlier versions
+        }
+        return hostingController
+    }()
     
     // MARK: - Ovveride Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
         setNavController()
-        setSwitchButton()
+        view.backgroundColor = .systemBackground
+        
+        presentAnimalCad()
+    }
+}
+    // MARK: - Adding SwiftUI View for HomeViewController
+extension HomeViewController {
+    private func presentAnimalCad() {
+        self.addChild(hostingController)
+        view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+        
+        setHostingViewConstrains()
+    }
+    
+    private func setHostingViewConstrains() {
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }
 
@@ -41,21 +63,6 @@ extension HomeViewController {
         
         let navBarItem = createNavBarItem("qrcode.viewfinder")
         navigationItem.rightBarButtonItem = navBarItem
-    }
-}
-
-    // MARK: - Setting for button switch notification
-
-extension HomeViewController {
-    private func setSwitchButton() {
-        view.addSubview(switchNotifButton)
-        
-        switchNotifButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            switchNotifButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            switchNotifButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            switchNotifButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
 }
 
@@ -77,16 +84,7 @@ extension HomeViewController {
     // MARK: - Button Methods
 extension HomeViewController {
     
-    private func switchNotifStatus() {
-        conditionNotification.toggle()
-        print(conditionNotification)
-    }
-    
-    @objc func switchNotifStatusOLD() {
-        conditionNotification.toggle()
-        print(conditionNotification)
-    }
-    
+    // Methods for navigationItem
     @objc func startScanQRCode() {
         print("test")
     }

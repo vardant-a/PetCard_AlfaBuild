@@ -11,57 +11,96 @@ import CoreLocation
 
 final class MapViewController: UIViewController {
     
-    // MARK: - Private properties
-    // SeachController
-    private lazy var searchController: UISearchController = {
-        let search = UISearchController(searchResultsController: nil)
-        search.searchBar.placeholder = "Search animal"
-        search.searchBar.tintColor = .systemBlue
-        return search
-    }()
+    private var conditionNotification = true
     
-    // MapKit
+    // MARK: - Private properties
+    
+    private let locationManager = CLLocationManager()
+    private let lostPets = LostAnimal.shared.lostAnimals
+    
+    // MARK: - MapKit
+    
     private lazy var mapKitView: MKMapView = {
         let map = MKMapView()
-        map.overrideUserInterfaceStyle = .light
         return map
     }()
     
-    private let locationManager = CLLocationManager()
+    // MARK: - User Location Button
     
-    private let lostPets = LostAnimal.shared.lostAnimals
+    private lazy var userLocationButton: UIButton = {
+        let button = UIButton()
+        if conditionNotification {
+            button.setBackgroundImage(UIImage(systemName: "location.north.circle.fill"), for: .normal)
+            button.tintColor = UIColor.systemBlue
+            button.backgroundColor = .white
+            button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
+            button.layer.cornerRadius = 25
+        } else {
+            button.setBackgroundImage(UIImage(systemName: "location.north.circle.fill"), for: .normal)
+            button.tintColor = UIColor.systemBlue
+            button.backgroundColor = .black
+            button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
+            button.layer.cornerRadius = 25
+        }
+        return button
+    }()
+
+    // MARK: - SheetPresentationController
+    
+    private lazy var testTable: UIViewController = {
+        let table = HomeViewController()
+        if #available(iOS 15.0, *) {
+            if let shett = table.sheetPresentationController {
+                shett.detents = [.medium()]
+            }
+            present(table, animated: true)
+        } else {
+            // Fallback on earlier versions
+        }
+        return table
+    }()
+    
+
+    // MARK: - Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavBar()
         view.addSubview(mapKitView)
+        view.addSubview(userLocationButton)
+        setConstraints()
         
         mapKitView.delegate = self
         mapKitView.addAnnotations(lostPets)
-        setConstraints()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         cheakLocationEnabled()
     }
 }
 
-// MARK: - Setting for NavigationBar
+    // MARK: - Setting for NavigationBar
+
 extension MapViewController {
     private func setNavBar() {
-        title = "Animal Map"
-        navigationItem.searchController = searchController
-        
-        searchController.searchResultsUpdater = self
+        title = "Map"
     }
 }
 
-// MARK: - Setting Constrains
+    // MARK: - @Objc methods for buttons
+extension MapViewController {
+    @objc func setUserLocationStatus() {
+        print("Tup on button")
+    }
+}
+
+    // MARK: - Setting Constrains
+
 extension MapViewController {
     private func setConstraints() {
+        // MapKitView
         mapKitView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mapKitView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -69,21 +108,18 @@ extension MapViewController {
             mapKitView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapKitView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        
+         // button
+        userLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            userLocationButton.heightAnchor.constraint(equalToConstant: 50),
+            userLocationButton.widthAnchor.constraint(equalToConstant: 50),
+            userLocationButton.bottomAnchor.constraint(equalTo: mapKitView.bottomAnchor, constant: -100),
+            userLocationButton.trailingAnchor.constraint(equalTo: mapKitView.trailingAnchor, constant: -16),
+        ])
     }
 }
-
-extension MapViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        print(text)
-    }
-    
-    private func filterContentForSearchText(_ searchText: String) {
-    }
-}
-
+    // MARK: - Всё для работы карты внизу
 extension MapViewController {
     private func cheakLocationEnabled() {
         DispatchQueue.global().async {

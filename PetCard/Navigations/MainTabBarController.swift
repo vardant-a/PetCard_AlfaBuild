@@ -56,11 +56,26 @@ extension MainTabBarController {
             selectedImage: "calendar.badge.clock"
         )
         
-        let mapVC = createVC(
-            MapViewController(),
+//        let mapVC = createVC(
+//            MapViewController(),
+//            title: "Animal Map",
+//            unselectedItemImage: setItem(oldImage: "globe", newImage: "globe.europe.africa"),
+//            selectedImage: setItem(oldImage: "globe", newImage: "globe.europe.africa.fill")
+//        )
+        
+        let mapVC = MapViewController()
+        mapVC.tabBarItem = UITabBarItem(
             title: "Animal Map",
-            unselectedItemImage: setItem(oldImage: "globe", newImage: "globe.europe.africa"),
-            selectedImage: setItem(oldImage: "globe", newImage: "globe.europe.africa.fill")
+            image: UIImage(
+                systemName: setItem(
+                    oldImage: "globe",
+                    newImage: "globe.europe.africa")
+            ),
+            selectedImage: UIImage(
+                systemName: setItem(
+                    oldImage: "globe",
+                    newImage: "globe.europe.africa.fill")
+            )
         )
         
         let settingsVC = createVC(
