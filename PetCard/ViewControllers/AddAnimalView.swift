@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct AddAnimalView: View {
-    
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
     
+    @State private var faceUp = true
+    @State private var animalName = ""
+    @State private var animalDOB = ""
     var body: some View {
         VStack {
             NavigationItemsView()
-                .padding(.bottom, 50)
-            BodyView()
+
+            AnimalCardView(
+                faceUp: $faceUp,
+                animalName: $animalName,
+                animalDOB: $animalDOB)
             Spacer()
         }
     }
@@ -38,31 +43,73 @@ struct AddAnimalView: View {
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
-    }
-    
-    // MARK: - Body View
-    @ViewBuilder
-    private func BodyView() -> some View {
-        VStack {
-            VStack {
-                Text("Face")
-            }
-            .frame(width: 348.829195, height: 220)
-            .background(Color.orange)
-            .cornerRadius(14.74)
-            .padding(.bottom, 20)
-            VStack {
-                Text("Back")
-            }
-            .frame(width: 348.829195, height: 220)
-            .background(Color.orange)
-            .cornerRadius(14.74)
-        }
+        .padding(.bottom, 50)
     }
 }
 
 struct AddAnimalView_Previews: PreviewProvider {
     static var previews: some View {
         AddAnimalView()
+    }
+}
+
+struct AnimalCardView: View {
+    @Binding var faceUp: Bool
+    @Binding var animalName: String
+    @Binding var animalDOB: String
+    var body: some View {
+        if faceUp {
+            HStack {
+                Button(action: {faceUp.toggle()}) {
+                    Text("")
+                        .frame(width: 12, height: 220)
+                        .background(.black.opacity(0))
+                }
+                VStack(alignment: .leading) {
+                    Image("avatar")
+                        .resizable()
+                        .frame(width: 100, height: 118.437)
+                        .padding(.top)
+                    Text("Date of Birth")
+                    TextField("DOB", text: $animalDOB)
+                }
+                
+                Spacer()
+                Button(action: {faceUp.toggle()}) {
+                    Text("")
+                        .frame(width: 12, height: 220)
+                        .background(.black.opacity(0))
+                }
+            }
+            .frame(width: 352, height: 220)
+            .background {
+                Image(systemName: "person")
+                    .resizable()
+                    Color.indigo
+            }
+            .cornerRadius(12)
+            .padding(.bottom, 20)
+        } else {
+            VStack {
+                HStack {
+                    Button(action: {faceUp.toggle()}) {
+                        Text("")
+                            .frame(width: 12, height: 220)
+                            .background(.black.opacity(0))
+                    }
+                    Spacer()
+                    Button(action: {faceUp.toggle()}) {
+                        Text("")
+                            .frame(width: 12, height: 220)
+                            .background(.black.opacity(0))
+                    }
+                }
+                
+            }
+            .frame(width: 352, height: 220)
+            .background(Color.gray)
+            .cornerRadius(12)
+            .padding(.bottom, 20)
+        }
     }
 }
