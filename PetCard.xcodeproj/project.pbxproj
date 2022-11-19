@@ -11,7 +11,11 @@
 		0E233496292518410020BA0B /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E233495292518410020BA0B /* CardStackView.swift */; };
 		0E23F405291AEB60003CE686 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23F404291AEB60003CE686 /* Notification.swift */; };
 		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
-		0E3D6397292923B40057659C /* AddEditAnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D6396292923B40057659C /* AddEditAnimalCardView.swift */; };
+		0E3D6397292923B40057659C /* AnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D6396292923B40057659C /* AnimalCardView.swift */; };
+		0E3D639929297F0C0057659C /* EditAnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D639829297F0C0057659C /* EditAnimalCardView.swift */; };
+		0E3D63A0292983F90057659C /* CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D639F292983F90057659C /* CardButtonView.swift */; };
+		0E3D63A229298B5F0057659C /* View + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D63A129298B5F0057659C /* View + extension.swift */; };
+		0E3D63A429298BF50057659C /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D63A329298BF50057659C /* Modifiers.swift */; };
 		0E45468629281BC6000EB218 /* FileManager + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45468529281BC6000EB218 /* FileManager + extension.swift */; };
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
 		0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E79A4A3292580A400B51688 /* AddAnimalView.swift */; };
@@ -37,7 +41,11 @@
 		0E233495292518410020BA0B /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		0E23F404291AEB60003CE686 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
-		0E3D6396292923B40057659C /* AddEditAnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditAnimalCardView.swift; sourceTree = "<group>"; };
+		0E3D6396292923B40057659C /* AnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCardView.swift; sourceTree = "<group>"; };
+		0E3D639829297F0C0057659C /* EditAnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAnimalCardView.swift; sourceTree = "<group>"; };
+		0E3D639F292983F90057659C /* CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonView.swift; sourceTree = "<group>"; };
+		0E3D63A129298B5F0057659C /* View + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + extension.swift"; sourceTree = "<group>"; };
+		0E3D63A329298BF50057659C /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		0E45468529281BC6000EB218 /* FileManager + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + extension.swift"; sourceTree = "<group>"; };
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
 		0E79A4A3292580A400B51688 /* AddAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalView.swift; sourceTree = "<group>"; };
@@ -71,6 +79,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3D639A292982F80057659C /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0EEC7A51291026770016AB4A /* HomeViewController.swift */,
+				0E233495292518410020BA0B /* CardStackView.swift */,
+				0E79A4A3292580A400B51688 /* AddAnimalView.swift */,
+				0E3D639829297F0C0057659C /* EditAnimalCardView.swift */,
+				0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */,
+				0E3D639C2929832C0057659C /* IItems */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		0E3D639B2929830B0057659C /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0EEC7A6D291041940016AB4A /* CalendarViewController.swift */,
+			);
+			path = CalendarViewController;
+			sourceTree = "<group>";
+		};
+		0E3D639C2929832C0057659C /* IItems */ = {
+			isa = PBXGroup;
+			children = (
+				0E3D6396292923B40057659C /* AnimalCardView.swift */,
+				0E3D639F292983F90057659C /* CardButtonView.swift */,
+			);
+			path = IItems;
+			sourceTree = "<group>";
+		};
+		0E3D639D292983440057659C /* MapViewContolller */ = {
+			isa = PBXGroup;
+			children = (
+				0EEC7A69291028D90016AB4A /* MapViewController.swift */,
+			);
+			path = MapViewContolller;
+			sourceTree = "<group>";
+		};
+		0E3D639E2929835A0057659C /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0EEC7A6B291033510016AB4A /* ProfileViewController.swift */,
+				0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
 		0E9072EA2912D7AD00BA7800 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +143,8 @@
 				0ED5AD752912B22600042E12 /* UIColor + extension.swift */,
 				0E8242D2291D457000D7F99D /* UIButton + extension.swift */,
 				0E45468529281BC6000EB218 /* FileManager + extension.swift */,
+				0E3D63A129298B5F0057659C /* View + extension.swift */,
+				0E3D63A329298BF50057659C /* Modifiers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,15 +201,10 @@
 		0EEC7A68291028970016AB4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0EEC7A51291026770016AB4A /* HomeViewController.swift */,
-				0EEC7A6D291041940016AB4A /* CalendarViewController.swift */,
-				0EEC7A69291028D90016AB4A /* MapViewController.swift */,
-				0EEC7A6B291033510016AB4A /* ProfileViewController.swift */,
-				0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */,
-				0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */,
-				0E233495292518410020BA0B /* CardStackView.swift */,
-				0E79A4A3292580A400B51688 /* AddAnimalView.swift */,
-				0E3D6396292923B40057659C /* AddEditAnimalCardView.swift */,
+				0E3D639A292982F80057659C /* HomeViewController */,
+				0E3D639B2929830B0057659C /* CalendarViewController */,
+				0E3D639D292983440057659C /* MapViewContolller */,
+				0E3D639E2929835A0057659C /* ProfileViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,27 +288,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3D6397292923B40057659C /* AddEditAnimalCardView.swift in Sources */,
+				0E3D6397292923B40057659C /* AnimalCardView.swift in Sources */,
 				0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */,
 				0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */,
 				0E233496292518410020BA0B /* CardStackView.swift in Sources */,
+				0E3D63A229298B5F0057659C /* View + extension.swift in Sources */,
 				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
 				0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,
 				0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */,
 				0E45468629281BC6000EB218 /* FileManager + extension.swift in Sources */,
 				0E1167F7292023EC00A35CFC /* User.swift in Sources */,
+				0E3D63A0292983F90057659C /* CardButtonView.swift in Sources */,
 				0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */,
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0E23F405291AEB60003CE686 /* Notification.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
+				0E3D639929297F0C0057659C /* EditAnimalCardView.swift in Sources */,
 				0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */,
 				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
 				0EEC7A6C291033510016AB4A /* ProfileViewController.swift in Sources */,
 				0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */,
 				0E8242D3291D457000D7F99D /* UIButton + extension.swift in Sources */,
+				0E3D63A429298BF50057659C /* Modifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
