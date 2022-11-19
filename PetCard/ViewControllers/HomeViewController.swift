@@ -12,10 +12,14 @@ final class HomeViewController: UIViewController {
     
     private var conditionNotification = true
     
+    private var animalList: [Animal] = [getAnimal]
+    
     // MARK: - Private lazy properties
     
     private lazy var hostingController: UIHostingController = {
-        let hostingController = UIHostingController(rootView: CardStackView())
+        let hostingController = UIHostingController(
+            rootView: CardStackView()
+        )
         if #available(iOS 16.0, *) {
             hostingController.sizingOptions = .preferredContentSize
         } else {

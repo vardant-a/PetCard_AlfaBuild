@@ -12,31 +12,59 @@ struct User {
     var mobileNo: String
     var password: String?
     
-    var animals: [Animal] = []
+    var animals: [Animal]?
+    
+    static func getUser() -> User {
+        return User(
+            name: "Aleksei",
+            mobileNo: "+7-999-495-17-72"
+        )
+    }
 }
 
 
+
 struct Animal {
-    let image: String?
-    let name: String
-    let anymalType: AnimalType
-    let breed: String
-    let color: String
-    let ownerNumber: String
+    let id = UUID().uuidString
+    var name: String
+    var image: String?
+    var anymalType: AnimalType?
+    var breed: String?
+    var hair: String?
+    var sex: Sex
+    var dob: String?
+    var faceUp: Bool = true
+    var ownerName: String = {
+        User.getUser().name
+    }()
+    var ownerNumber: String = {
+        User.getUser().mobileNo
+    }()
     
-    static func getAnimalLost() -> Animal {
-        return Animal(
-            image: "1",
+    static func getAnimalList() -> Animal {
+        let animal =  Animal(
             name: "Ray",
             anymalType: .dog,
-            breed: "doberman",
-            color: "black",
-            ownerNumber: "+7-999-495-17-72"
+            breed: "Doberman",
+            hair: "Black",
+            sex: .male,
+            dob: "11.11.11",
+            ownerName: User.getUser().name,
+            ownerNumber: User.getUser().mobileNo
         )
+        return animal
     }
+}
+
+enum Sex: String {
+    case male = "Male"
+    case female = "Female"
 }
 
 enum AnimalType: String {
     case dog = "Dog"
     case cat = "Cat"
 }
+
+
+var getAnimal = Animal.getAnimalList()
