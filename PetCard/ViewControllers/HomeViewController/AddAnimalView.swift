@@ -9,12 +9,10 @@ import SwiftUI
 
 struct AddAnimalView: View {
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
-    
-    @State private var animalCard = User.getUser().animals
 
     @State private var animalName = ""
     @State private var animalType = ""
-    
+    @State private var sex: Sex = .male
     
     var body: some View {
         VStack {
