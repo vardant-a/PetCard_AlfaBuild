@@ -10,13 +10,22 @@ import SwiftUI
 struct AddAnimalView: View {
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
 
-    @State private var animalName = ""
-    @State private var animalType = ""
-    @State private var sex: Sex = .male
+    // MARK: - State properties
+    @State private var animal = Animal.getAnimalList()
+    
+    @State private var name = ""
+    @State private var animalType: AnimalType = .notDefined
+    @State private var breed = ""
+    @State private var hair = ""
+    @State private var sex: Sex = .notDefined
+    @State private var dob = ""
     
     var body: some View {
         VStack {
             NavigationItemsView()
+            
+            AnimalCardForEdit(animal: $animal)
+            
             Spacer()
         }
     }

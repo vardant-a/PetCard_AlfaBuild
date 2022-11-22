@@ -12,7 +12,7 @@ struct CardStackView: View {
     @State private var showingAddAnimalView = false
     
     var animalList: [Animal]
-    @State private var animal = getAnimal
+    @State private var animal = Animal.getAnimalList()
     
     var body: some View {
         if !animalList.isEmpty {

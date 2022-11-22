@@ -10,42 +10,22 @@ import SwiftUI
 struct EditAnimalCardView: View {
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
     
-    @State private var faceUp = true
+    @State private var animal: Animal = Animal.getAnimalList()
+    @State private var name = ""
+    @State private var animalType: AnimalType = .notDefined
+    @State private var breed = ""
+    @State private var hair = ""
+    @State private var sex: Sex = .notDefined
+    @State private var dob = ""
+    
     var body: some View {
         VStack {
             NavigationItemsView()
             
-            if faceUp {
-                HStack {
-                    
-                }
-                .frame(width: 352, height: 220)
-                .background {
-                    Color.backgroundColor
-                }
-                .cornerRadius(12)
-                .padding(.bottom, 20)
-            } else {
-                HStack {
-                    Button(action: {faceUp.toggle()}) {
-                        Text("")
-                            .frame(width: 12, height: 220)
-                            .background(.black.opacity(0))
-                    }
-                    Spacer()
-                    Button(action: {faceUp.toggle()}) {
-                        Text("")
-                            .frame(width: 12, height: 220)
-                            .background(.black.opacity(0))
-                    }
-                }
-                .frame(width: 352, height: 220)
-                .background(Color.gray)
-                .cornerRadius(12)
-                .padding(.bottom, 20)
-            }
+            AnimalCardForEdit(animal: $animal)
             Spacer()
         }
+        
     }
     
     // MARK: - Header View
@@ -75,28 +55,3 @@ struct EditAnimalCardView_Previews: PreviewProvider {
         CardStackView(animalList: [])
     }
 }
-
-
-//        if faceUp {
-//            
-//        } else {
-//            VStack {
-//                HStack {
-//                    Button(action: {faceUp.toggle()}) {
-//                        Text("")
-//                            .frame(width: 12, height: 220)
-//                            .background(.black.opacity(0))
-//                    }
-//                    Spacer()
-//                    Button(action: {faceUp.toggle()}) {
-//                        Text("")
-//                            .frame(width: 12, height: 220)
-//                            .background(.black.opacity(0))
-//                    }
-//                }
-//            }
-//            .frame(width: 352, height: 220)
-//            .background(Color.gray)
-//            .cornerRadius(12)
-//            .padding(.bottom, 20)
-//        }

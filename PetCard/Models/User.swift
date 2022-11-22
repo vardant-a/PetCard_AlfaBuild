@@ -33,7 +33,6 @@ struct Animal {
     var hair: String?
     var sex: Sex
     var dob: String?
-    var faceUp: Bool = true
     var ownerName: String = {
         User.getUser().name
     }()
@@ -59,12 +58,11 @@ struct Animal {
 enum Sex: String {
     case male = "Male"
     case female = "Female"
+    case notDefined = "Not defined"
 }
 
 enum AnimalType: String {
     case dog = "Dog"
     case cat = "Cat"
+    case notDefined = "Not defined"
 }
-
-
-var getAnimal = Animal.getAnimalList()

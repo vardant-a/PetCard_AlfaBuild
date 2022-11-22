@@ -9,17 +9,17 @@ import SwiftUI
 
 struct CardButtonView: View {
     
-    @State private var isShowDialog = false
+    @State private var isShowAlertDialog = false
     @State private var isShowAddView = false
     @State private var isShowEditView = false
 
     var body: some View {
         Button(action: {
-            isShowDialog.toggle()
+            isShowAlertDialog.toggle()
         }) {
             Image(systemName: "gear")
         }
-        .confirmationDialog("Pay", isPresented: $isShowDialog) {
+        .confirmationDialog("Pay", isPresented: $isShowAlertDialog) {
             
             // MARK: - Create AnimalCard
             Button("Add new Animal") {
