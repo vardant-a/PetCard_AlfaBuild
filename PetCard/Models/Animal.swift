@@ -10,14 +10,15 @@ import Foundation
 struct Animal {
     let id = UUID().uuidString
     var name: String
-    var image: String?
+    var image: String? = "avatar"
     var anymalType: AnimalType?
     var breed: String?
     var hair: String?
     var sex: Sex
     var dob: String?
-    var animalID: String?
     
+    var animalID: String?
+    var qrCode: String?
     var ownerName: String = {
         User.getUser().name
     }()
@@ -28,7 +29,6 @@ struct Animal {
     static func getAnimalList() -> Animal {
         let animal =  Animal(
             name: "Ray",
-            image: "QRcode",
             anymalType: .dog,
             breed: "Doberman",
             hair: "Black",

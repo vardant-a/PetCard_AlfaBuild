@@ -110,7 +110,7 @@ struct StaticAnimalCardView: View {
                             .frame(width: 352, height: 3)
                     }
                     HStack(spacing: 20) {
-                        Image(animal.image ?? "avatar")
+                        Image(animal.image ?? "a")
                             .resizable()
                             .frame(width: 75, height: 75)
                             .background(Color.green)
@@ -123,7 +123,7 @@ struct StaticAnimalCardView: View {
                             VStack(alignment: .leading) {
                                 Text("Owner number:")
                                     .fontWeight(.bold)
-                                CallNumberButtonView(number: animal.ownerNumber)
+                                CallButtonView(number: animal.ownerNumber)
                             }
                         }
                     }

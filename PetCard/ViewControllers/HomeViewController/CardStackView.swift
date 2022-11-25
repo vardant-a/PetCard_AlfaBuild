@@ -15,20 +15,31 @@ struct CardStackView: View {
     @State private var animal = Animal.getAnimalList()
     
     var body: some View {
-        if !animalList.isEmpty {
-            Button(action: {showingAddAnimalView.toggle()}) {
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-            }
-            .frame(width: 352, height: 220)
-            .background(Color.backgroundColor)
-            .cornerRadius(12)
-            .sheet(isPresented: $showingAddAnimalView) {
-                AddAnimalView()
+        if animalList.isEmpty {
+            VStack {
+                Spacer()
+                Image("")
+                Text("Animal List is Empty")
+                Spacer()
+                AddFirstAnimalCardButton()
+                    .padding(.horizontal)
+                    .padding(.bottom, 23)
             }
         } else {
             StaticAnimalCardView()
+        }
+    }
+    
+    @ViewBuilder
+    private func AddFirstAnimalCardButton() -> some View {
+        Button(action: { showingAddAnimalView.toggle() }) {
+            Text("Add first Animal")
+                .frame(maxWidth: .infinity, maxHeight: 44)
+                .background(Color.barColor)
+                .cornerRadius(8)
+        }
+        .sheet(isPresented: $showingAddAnimalView) {
+            AddAnimalView()
         }
     }
 }

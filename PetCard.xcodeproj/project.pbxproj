@@ -23,7 +23,8 @@
 		0E8242D3291D457000D7F99D /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8242D2291D457000D7F99D /* UIButton + extension.swift */; };
 		0EACF0622930E23C005598E6 /* DinamicAnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF0612930E23C005598E6 /* DinamicAnimalCardView.swift */; };
 		0EACF0642930E371005598E6 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF0632930E371005598E6 /* Animal.swift */; };
-		0EACF06629310899005598E6 /* CallNumberButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF06529310899005598E6 /* CallNumberButtonView.swift */; };
+		0EACF06629310899005598E6 /* CallButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF06529310899005598E6 /* CallButtonView.swift */; };
+		0EACF068293153C9005598E6 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF067293153C9005598E6 /* ApplicationManager.swift */; };
 		0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED135462923DF9000BF3757 /* StorageManager.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
@@ -56,7 +57,8 @@
 		0E8242D2291D457000D7F99D /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
 		0EACF0612930E23C005598E6 /* DinamicAnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinamicAnimalCardView.swift; sourceTree = "<group>"; };
 		0EACF0632930E371005598E6 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		0EACF06529310899005598E6 /* CallNumberButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallNumberButtonView.swift; sourceTree = "<group>"; };
+		0EACF06529310899005598E6 /* CallButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButtonView.swift; sourceTree = "<group>"; };
+		0EACF067293153C9005598E6 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		0ED135462923DF9000BF3757 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +114,7 @@
 				0E3D6396292923B40057659C /* StaticAnimalCardView.swift */,
 				0EACF0612930E23C005598E6 /* DinamicAnimalCardView.swift */,
 				0E3D639F292983F90057659C /* CardButtonView.swift */,
-				0EACF06529310899005598E6 /* CallNumberButtonView.swift */,
+				0EACF06529310899005598E6 /* CallButtonView.swift */,
 			);
 			path = IItems;
 			sourceTree = "<group>";
@@ -223,6 +225,7 @@
 			children = (
 				0EEC7A59291026780016AB4A /* Assets.xcassets */,
 				0ED135462923DF9000BF3757 /* StorageManager.swift */,
+				0EACF067293153C9005598E6 /* ApplicationManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -302,13 +305,14 @@
 				0EACF0622930E23C005598E6 /* DinamicAnimalCardView.swift in Sources */,
 				0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */,
 				0E233496292518410020BA0B /* CardStackView.swift in Sources */,
-				0EACF06629310899005598E6 /* CallNumberButtonView.swift in Sources */,
+				0EACF06629310899005598E6 /* CallButtonView.swift in Sources */,
 				0E3D63A229298B5F0057659C /* View + extension.swift in Sources */,
 				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
 				0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,
 				0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */,
 				0E45468629281BC6000EB218 /* FileManager + extension.swift in Sources */,
+				0EACF068293153C9005598E6 /* ApplicationManager.swift in Sources */,
 				0E1167F7292023EC00A35CFC /* User.swift in Sources */,
 				0E3D63A0292983F90057659C /* CardButtonView.swift in Sources */,
 				0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */,

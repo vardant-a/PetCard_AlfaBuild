@@ -30,13 +30,15 @@ final class MapViewController: UIViewController {
     private lazy var userLocationButton: UIButton = {
         let button = UIButton()
         if conditionNotification {
-            button.setBackgroundImage(UIImage(systemName: "location.north.circle.fill"), for: .normal)
+            button.setBackgroundImage(
+                UIImage(systemName: "location.north.circle.fill"), for: .normal)
             button.tintColor = UIColor.systemBlue
             button.backgroundColor = .white
             button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
             button.layer.cornerRadius = 25
         } else {
-            button.setBackgroundImage(UIImage(systemName: "location.north.circle.fill"), for: .normal)
+            button.setBackgroundImage(
+                UIImage(systemName: "location.north.circle.fill"), for: .normal)
             button.tintColor = UIColor.systemBlue
             button.backgroundColor = .black
             button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
@@ -45,47 +47,19 @@ final class MapViewController: UIViewController {
         return button
     }()
 
-    // MARK: - SheetPresentationController
-    
-    private lazy var testTable: UIViewController = {
-        let table = HomeViewController()
-        if #available(iOS 15.0, *) {
-            if let shett = table.sheetPresentationController {
-                shett.detents = [.medium()]
-            }
-            present(table, animated: true)
-        } else {
-            // Fallback on earlier versions
-        }
-        return table
-    }()
-    
-
     // MARK: - Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setNavBar()
+
         view.addSubview(mapKitView)
         view.addSubview(userLocationButton)
         setConstraints()
-        
-        mapKitView.delegate = self
-        mapKitView.addAnnotations(lostPets)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cheakLocationEnabled()
-    }
-}
-
-    // MARK: - Setting for NavigationBar
-
-extension MapViewController {
-    private func setNavBar() {
-        title = "Map"
     }
 }
 
@@ -130,7 +104,8 @@ extension MapViewController {
                 self.showAlertLocation(
                     title: "Your location service is disabled",
                     message: "Please open settings and allow PetCard to use your location.",
-                    url: URL(string: "App-Prefs:root=LOCATION_SERVICES"))
+                    url: URL(string: "App-Prefs:root=LOCATION_SERVICES")
+                )
             }
         }
     }
@@ -217,7 +192,7 @@ extension MapViewController: MKMapViewDelegate {
 //            let detailMarkerView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 50))
 //            detailMarkerView.backgroundColor = .green
 //            viewMarker.leftCalloutAccessoryView = detailMarkerView
-////            viewMarker.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//            viewMarker.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
 //        }
 //        return viewMarker
 //    }
