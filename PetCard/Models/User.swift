@@ -17,52 +17,7 @@ struct User {
     static func getUser() -> User {
         return User(
             name: "Aleksei",
-            mobileNo: "+7-999-495-17-72"
+            mobileNo: "+79610949698"
         )
     }
-}
-
-
-
-struct Animal {
-    let id = UUID().uuidString
-    var name: String
-    var image: String?
-    var anymalType: AnimalType?
-    var breed: String?
-    var hair: String?
-    var sex: Sex
-    var dob: String?
-    var ownerName: String = {
-        User.getUser().name
-    }()
-    var ownerNumber: String = {
-        User.getUser().mobileNo
-    }()
-    
-    static func getAnimalList() -> Animal {
-        let animal =  Animal(
-            name: "Ray",
-            anymalType: .dog,
-            breed: "Doberman",
-            hair: "Black",
-            sex: .male,
-            dob: "11.11.11",
-            ownerName: User.getUser().name,
-            ownerNumber: User.getUser().mobileNo
-        )
-        return animal
-    }
-}
-
-enum Sex: String {
-    case male = "Male"
-    case female = "Female"
-    case notDefined = "Not defined"
-}
-
-enum AnimalType: String {
-    case dog = "Dog"
-    case cat = "Cat"
-    case notDefined = "Not defined"
 }

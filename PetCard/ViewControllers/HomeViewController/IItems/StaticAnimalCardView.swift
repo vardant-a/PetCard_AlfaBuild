@@ -9,7 +9,8 @@ import SwiftUI
 
 // MARK: - Creating AnimalCardView
 struct StaticAnimalCardView: View {
-    @State private var faceUp = true
+    @State private var animal = Animal.getAnimalList()
+    @State private var faceUp = false
     var body: some View {
         if faceUp {
             FaceAnimalCard()
@@ -97,14 +98,61 @@ struct StaticAnimalCardView: View {
     // MARK: - Back Animal Card
     @ViewBuilder
     private func BackAnimalCard() -> some View {
-        HStack {
-            ReverseButton()
-            
-            Spacer()
-            Text("Back")
-            Spacer()
-            
-            ReverseButton()
+        ZStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    VStack {
+                        Rectangle()
+                            .foregroundColor(.white)
+                            .frame(height: 5)
+                        Rectangle()
+                            .foregroundColor(.red)
+                            .frame(width: 352, height: 3)
+                    }
+                    HStack(spacing: 20) {
+                        Image(animal.image ?? "avatar")
+                            .resizable()
+                            .frame(width: 75, height: 75)
+                            .background(Color.green)
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text("Owner name:")
+                                    .fontWeight(.bold)
+                                Text(animal.ownerName)
+                            }
+                            VStack(alignment: .leading) {
+                                Text("Owner number:")
+                                    .fontWeight(.bold)
+                                CallNumberButtonView(number: animal.ownerNumber)
+                            }
+                        }
+                    }
+                    .padding()
+                    
+                    Spacer()
+                    
+                    VStack() {
+                        Text("Animal ID:")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        Text(animal.animalID ?? "nil")
+                        Rectangle()
+                            .foregroundColor(.red)
+                            .frame(width: 352, height: 3)
+                        Rectangle()
+                            .foregroundColor(.white)
+                    }
+                    .frame(width: 352)
+                    .background(Color.gray)
+                }
+            }
+            HStack {
+                ReverseButton()
+                    .padding(.leading, 0)
+                Spacer()
+                ReverseButton()
+                    .padding(.trailing, 0)
+            }
         }
         .cardShell()
     }

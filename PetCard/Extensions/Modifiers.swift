@@ -12,7 +12,7 @@ struct CardShell: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(width: 352, height: 220)
-            .background(Color.yellow)
+            .background(Color.cardColor)
             .cornerRadius(12)
     }
 }
