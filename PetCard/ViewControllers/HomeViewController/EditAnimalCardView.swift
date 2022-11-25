@@ -22,7 +22,7 @@ struct EditAnimalCardView: View {
         VStack {
             NavigationItemsView()
             
-            AnimalCardForEdit(animal: $animal)
+            DinamicAnimalCardView(animal: $animal)
             Spacer()
         }
         

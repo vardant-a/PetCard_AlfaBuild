@@ -28,7 +28,7 @@ struct CardStackView: View {
                 AddAnimalView()
             }
         } else {
-            AnimalCardView()
+            StaticAnimalCardView()
         }
     }
 }

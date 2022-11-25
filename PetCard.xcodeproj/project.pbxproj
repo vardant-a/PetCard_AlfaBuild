@@ -11,7 +11,7 @@
 		0E233496292518410020BA0B /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E233495292518410020BA0B /* CardStackView.swift */; };
 		0E23F405291AEB60003CE686 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23F404291AEB60003CE686 /* Notification.swift */; };
 		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
-		0E3D6397292923B40057659C /* AnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D6396292923B40057659C /* AnimalCardView.swift */; };
+		0E3D6397292923B40057659C /* StaticAnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D6396292923B40057659C /* StaticAnimalCardView.swift */; };
 		0E3D639929297F0C0057659C /* EditAnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D639829297F0C0057659C /* EditAnimalCardView.swift */; };
 		0E3D63A0292983F90057659C /* CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D639F292983F90057659C /* CardButtonView.swift */; };
 		0E3D63A229298B5F0057659C /* View + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D63A129298B5F0057659C /* View + extension.swift */; };
@@ -21,6 +21,7 @@
 		0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E79A4A3292580A400B51688 /* AddAnimalView.swift */; };
 		0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */; };
 		0E8242D3291D457000D7F99D /* UIButton + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8242D2291D457000D7F99D /* UIButton + extension.swift */; };
+		0EACF0622930E23C005598E6 /* DinamicAnimalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF0612930E23C005598E6 /* DinamicAnimalCardView.swift */; };
 		0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED135462923DF9000BF3757 /* StorageManager.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
@@ -41,7 +42,7 @@
 		0E233495292518410020BA0B /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		0E23F404291AEB60003CE686 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
-		0E3D6396292923B40057659C /* AnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCardView.swift; sourceTree = "<group>"; };
+		0E3D6396292923B40057659C /* StaticAnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticAnimalCardView.swift; sourceTree = "<group>"; };
 		0E3D639829297F0C0057659C /* EditAnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAnimalCardView.swift; sourceTree = "<group>"; };
 		0E3D639F292983F90057659C /* CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonView.swift; sourceTree = "<group>"; };
 		0E3D63A129298B5F0057659C /* View + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + extension.swift"; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		0E79A4A3292580A400B51688 /* AddAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalView.swift; sourceTree = "<group>"; };
 		0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalInfoView.swift; sourceTree = "<group>"; };
 		0E8242D2291D457000D7F99D /* UIButton + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extension.swift"; sourceTree = "<group>"; };
+		0EACF0612930E23C005598E6 /* DinamicAnimalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinamicAnimalCardView.swift; sourceTree = "<group>"; };
 		0ED135462923DF9000BF3757 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,8 +105,9 @@
 		0E3D639C2929832C0057659C /* IItems */ = {
 			isa = PBXGroup;
 			children = (
-				0E3D6396292923B40057659C /* AnimalCardView.swift */,
+				0E3D6396292923B40057659C /* StaticAnimalCardView.swift */,
 				0E3D639F292983F90057659C /* CardButtonView.swift */,
+				0EACF0612930E23C005598E6 /* DinamicAnimalCardView.swift */,
 			);
 			path = IItems;
 			sourceTree = "<group>";
@@ -288,8 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3D6397292923B40057659C /* AnimalCardView.swift in Sources */,
+				0E3D6397292923B40057659C /* StaticAnimalCardView.swift in Sources */,
 				0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */,
+				0EACF0622930E23C005598E6 /* DinamicAnimalCardView.swift in Sources */,
 				0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */,
 				0E233496292518410020BA0B /* CardStackView.swift in Sources */,
 				0E3D63A229298B5F0057659C /* View + extension.swift in Sources */,
