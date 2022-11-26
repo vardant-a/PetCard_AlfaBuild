@@ -35,7 +35,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavController()
-        view.backgroundColor = .backgroundColor ?? .systemBackground
+        view.backgroundColor = .systemBackground
         view.addSubview(versionAppLabel)
         view.addSubview(logOutButton)
         setConstrains()
@@ -98,7 +98,7 @@ extension ProfileViewController {
         versionAppLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            versionAppLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 570),
+            versionAppLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             versionAppLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
@@ -106,10 +106,11 @@ extension ProfileViewController {
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            logOutButton.topAnchor.constraint(equalTo: versionAppLabel.bottomAnchor, constant: 20),
+            logOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             logOutButton.heightAnchor.constraint(equalToConstant: 44),
             logOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            logOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
         ])
     }
 }

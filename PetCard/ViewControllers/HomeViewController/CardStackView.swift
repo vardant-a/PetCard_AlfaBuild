@@ -15,7 +15,7 @@ struct CardStackView: View {
     var animal = Animal.getAnimalList()
     
     var body: some View {
-        if !animalList.isEmpty {
+        if animalList.isEmpty {
             VStack {
                 Spacer()
                 Image("AnimalListIsEmpty")
@@ -32,7 +32,7 @@ struct CardStackView: View {
                 Spacer()
                 AddAnimalCardButton()
                     .padding(.horizontal)
-                    .padding(.bottom, 23)
+                    .padding(.bottom, 20) // old values is 23 points
             }
         } else {
             StaticAnimalCardView(animal: animal)
@@ -42,7 +42,7 @@ struct CardStackView: View {
     @ViewBuilder
     private func AddAnimalCardButton() -> some View {
         Button(action: { showingAddAnimalView.toggle() }) {
-            Text("Add animal")
+            Text("Add Animal")
                 .frame(maxWidth: .infinity, maxHeight: 44)
                 .background(Color.barColor)
                 .cornerRadius(8)

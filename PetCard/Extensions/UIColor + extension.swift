@@ -10,16 +10,13 @@ import SwiftUI
 
 // MARK: - Color for UIKit
 extension UIColor {
-    
     static let barColor = UIColor(named: "NavBackgroundColor")
     static let backgroundColor = UIColor(named: "BackgroudAppColor")
-    static let regularButtonColor = UIColor(named: "RegularButtonColor")
 }
 
 // MARK: - Color for SwiftUI
 extension Color {
     static let barColor = Color("NavBackgroundColor")
     static let backgroundColor = Color("BackgroudAppColor")
-    static let regularButtonColor = Color("RegularButtonColor")
     static let cardColor = Color("CardColor")
 }
