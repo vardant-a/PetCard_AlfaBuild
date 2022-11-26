@@ -12,28 +12,37 @@ struct CardStackView: View {
     @State private var showingAddAnimalView = false
     
     var animalList: [Animal]
-    @State private var animal = Animal.getAnimalList()
+    var animal = Animal.getAnimalList()
     
     var body: some View {
-        if animalList.isEmpty {
+        if !animalList.isEmpty {
             VStack {
                 Spacer()
-                Image("")
-                Text("Animal List is Empty")
+                Image("AnimalListIsEmpty")
+                    .resizable()
+                    .frame(maxWidth: 200, maxHeight: 218.7)
+                VStack {
+                    Text("Your pet list is empty.")
+                        .fontWeight(.bold)
+                    Text("Add a pet to see the animal card.")
+                        .fontWeight(.bold)
+                }
+                .font(.title2)
+                
                 Spacer()
-                AddFirstAnimalCardButton()
+                AddAnimalCardButton()
                     .padding(.horizontal)
                     .padding(.bottom, 23)
             }
         } else {
-            StaticAnimalCardView()
+            StaticAnimalCardView(animal: animal)
         }
     }
     
     @ViewBuilder
-    private func AddFirstAnimalCardButton() -> some View {
+    private func AddAnimalCardButton() -> some View {
         Button(action: { showingAddAnimalView.toggle() }) {
-            Text("Add first Animal")
+            Text("Add animal")
                 .frame(maxWidth: .infinity, maxHeight: 44)
                 .background(Color.barColor)
                 .cornerRadius(8)

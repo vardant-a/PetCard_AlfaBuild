@@ -13,11 +13,12 @@ struct User {
     var password: String?
     
     var animals: [Animal]?
+    var lostAnimals: [Animal]?
     
     static func getUser() -> User {
         return User(
-            name: "Aleksei",
-            mobileNo: "+79610949698"
+            name: "Zulla",
+            mobileNo: "+7-911-911-76-78"
         )
     }
 }

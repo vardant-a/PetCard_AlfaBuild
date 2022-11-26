@@ -9,8 +9,8 @@ import SwiftUI
 
 // MARK: - Creating AnimalCardView
 struct StaticAnimalCardView: View {
-    @State private var animal = Animal.getAnimalList()
-    @State private var faceUp = false
+    var animal: Animal
+    @State private var faceUp = true
     var body: some View {
         if faceUp {
             FaceAnimalCard()
@@ -50,33 +50,31 @@ struct StaticAnimalCardView: View {
                 HStack {
                     Text("Name:")
                         .fontWeight(.bold)
-                    Text("Ray")
+                    Text(animal.name)
                 }
                 
                 HStack {
                     Text("Class:")
                         .fontWeight(.bold)
-                    Text("Dog")
+                    Text(animal.animalType?.rawValue ?? AnimalType.notDefined.rawValue)
                 }
                 
                 HStack {
                     Text("Breed:")
                         .fontWeight(.bold)
-                    
-                    Text("Doberman")
+                    Text(animal.breed ?? "Not Defined")
                 }
                 
                 HStack {
                     Text("Hair:")
                         .fontWeight(.bold)
-                    Text("Black")
+                    Text(animal.hair ?? "Not Defined")
                 }
                 
                 HStack {
                     Text("Sex:")
                         .fontWeight(.bold)
-                    
-                    Text("M")
+                    Text(animal.sex?.rawValue ?? Sex.notDefined.rawValue)
                 }
                 Spacer()
             }
@@ -170,7 +168,7 @@ struct StaticAnimalCardView: View {
 
 struct StaticAnimalCardView_Previews: PreviewProvider {
     static var previews: some View {
-        StaticAnimalCardView()
+        StaticAnimalCardView(animal: Animal.getAnimalList())
     }
 }
 

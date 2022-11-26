@@ -11,11 +11,12 @@ struct Animal {
     let id = UUID().uuidString
     var name: String
     var image: String? = "avatar"
-    var anymalType: AnimalType?
+    var animalType: AnimalType?
     var breed: String?
     var hair: String?
-    var sex: Sex
+    var sex: Sex?
     var dob: String?
+    var statusLost: Bool = false
     
     var animalID: String?
     var qrCode: String?
@@ -29,7 +30,7 @@ struct Animal {
     static func getAnimalList() -> Animal {
         let animal =  Animal(
             name: "Ray",
-            anymalType: .dog,
+            animalType: .dog,
             breed: "Doberman",
             hair: "Black",
             sex: .male,

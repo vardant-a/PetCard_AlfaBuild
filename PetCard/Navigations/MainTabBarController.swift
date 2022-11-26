@@ -40,6 +40,7 @@ extension MainTabBarController {
     }
 }
 // MARK: - Create collections VC for TabBar
+
 extension MainTabBarController {
     private func createTabBar() {
         let homeVC = createVC(
@@ -55,13 +56,6 @@ extension MainTabBarController {
             unselectedItemImage: "calendar",
             selectedImage: "calendar.badge.clock"
         )
-        
-//        let mapVC = createVC(
-//            MapViewController(),
-//            title: "Animal Map",
-//            unselectedItemImage: setItem(oldImage: "globe", newImage: "globe.europe.africa"),
-//            selectedImage: setItem(oldImage: "globe", newImage: "globe.europe.africa.fill")
-//        )
         
         let mapVC = MapViewController()
         mapVC.tabBarItem = UITabBarItem(
@@ -88,6 +82,7 @@ extension MainTabBarController {
         viewControllers = [homeVC, calendarVC, mapVC, settingsVC]
     }
     
+    // MARK: - Set
     private func setItem(oldImage forOldVersionIOS: String, newImage forNewVersionIOS: String) -> String {
         if #available(iOS 15.0, *) {
             return forNewVersionIOS

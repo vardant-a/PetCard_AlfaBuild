@@ -17,12 +17,12 @@ struct CardButtonView: View {
         Button(action: {
             isShowAlertDialog.toggle()
         }) {
-            Image(systemName: "gear")
+            Image(systemName: "slider.horizontal.3")
         }
         .confirmationDialog("Pay", isPresented: $isShowAlertDialog) {
             
             // MARK: - Create AnimalCard
-            Button("Add new Animal") {
+            Button("Add Animal") {
                 isShowAddView.toggle()
             }
             
@@ -49,5 +49,14 @@ struct CardButtonView: View {
 struct CardButtonView_Previews: PreviewProvider {
     static var previews: some View {
         CardButtonView()
+    }
+}
+
+// MARK: - Button switch status Animal in AnimalCard
+struct SwitсhStatusButtonView: View {
+    var body: some View {
+        Button(action: {}) {
+            
+        }
     }
 }
