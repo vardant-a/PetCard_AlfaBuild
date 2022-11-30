@@ -14,7 +14,7 @@ final class LogScreenViewController: UIViewController {
     
     private lazy var hostingController: UIHostingController = {
         let hostingController = UIHostingController(
-            rootView: LogScreenView()
+            rootView: LogScreenView(buttonAction: { self.prepareForApp() })
         )
         if #available(iOS 16.0, *) {
             hostingController.sizingOptions = .preferredContentSize
@@ -28,6 +28,12 @@ final class LogScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presentLoginView()
+    }
+    private func prepareForApp() {
+        let tabBar = MainTabBarController()
+        tabBar.modalPresentationStyle = .fullScreen
+        tabBar.modalTransitionStyle = .crossDissolve
+        present(tabBar, animated: true)
     }
 }
     // MARK: - Add LogView and hostingController, settings constrains

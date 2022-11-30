@@ -41,6 +41,6 @@ struct PasswordTFView: View {
 
 struct PasswordTFView_Previews: PreviewProvider {
     static var previews: some View {
-        LogScreenView()
+        LogScreenView(buttonAction: {})
     }
 }

@@ -29,6 +29,6 @@ struct LoginTFView: View {
 
 struct LoginTFView_Previews: PreviewProvider {
     static var previews: some View {
-        LogScreenView()
+        LogScreenView(buttonAction: {})
     }
 }

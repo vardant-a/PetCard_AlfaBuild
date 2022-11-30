@@ -11,6 +11,7 @@ struct LogScreenView: View {
     @State private var login = ""
     @State private var password = ""
     @State private var valid = false
+    var buttonAction: () -> Void
     var body: some View {
             VStack {
                 Image("Logo")
@@ -23,7 +24,7 @@ struct LogScreenView: View {
                     .padding(.bottom, 8)
                 PasswordTFView(password: $password)
                     .padding(.bottom, 8)
-                Button(action: { prepeareInApp() }) {
+                Button(action: { buttonAction() }) {
                     Text("Log In")
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, maxHeight: 44)
@@ -44,14 +45,11 @@ struct LogScreenView: View {
             }
             .padding()
     }
-    
-    private func prepeareInApp() {
-        print("user - valid")
-    }
+
 }
 
 struct LogScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        LogScreenView()
+        LogScreenView(buttonAction: {print("1")})
     }
 }
