@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E1167F7292023EC00A35CFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1167F6292023EC00A35CFC /* User.swift */; };
+		0E16102E29377562000D9D61 /* LogScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E16102D29377562000D9D61 /* LogScreenViewController.swift */; };
 		0E233496292518410020BA0B /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E233495292518410020BA0B /* CardStackView.swift */; };
 		0E23F405291AEB60003CE686 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23F404291AEB60003CE686 /* Notification.swift */; };
 		0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27DA33291408C900B768C0 /* AnimalPlace.swift */; };
@@ -27,6 +28,9 @@
 		0EACF068293153C9005598E6 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF067293153C9005598E6 /* ApplicationManager.swift */; };
 		0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED135462923DF9000BF3757 /* StorageManager.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
+		0EE7B7DD29377D1C001BCE90 /* LogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */; };
+		0EE7B7E029377EE1001BCE90 /* LoginTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */; };
+		0EE7B7E229378615001BCE90 /* PasswordTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7E129378615001BCE90 /* PasswordTFView.swift */; };
 		0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4D291026770016AB4A /* AppDelegate.swift */; };
 		0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A4F291026770016AB4A /* SceneDelegate.swift */; };
 		0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A51291026770016AB4A /* HomeViewController.swift */; };
@@ -42,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0E1167F6292023EC00A35CFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0E16102D29377562000D9D61 /* LogScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScreenViewController.swift; sourceTree = "<group>"; };
 		0E233495292518410020BA0B /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		0E23F404291AEB60003CE686 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0E27DA33291408C900B768C0 /* AnimalPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPlace.swift; sourceTree = "<group>"; };
@@ -61,6 +66,9 @@
 		0EACF067293153C9005598E6 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		0ED135462923DF9000BF3757 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
+		0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScreenView.swift; sourceTree = "<group>"; };
+		0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTFView.swift; sourceTree = "<group>"; };
+		0EE7B7E129378615001BCE90 /* PasswordTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTFView.swift; sourceTree = "<group>"; };
 		0EEC7A4A291026770016AB4A /* PetCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEC7A4D291026770016AB4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EEC7A4F291026770016AB4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +95,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E16102C2937754C000D9D61 /* LogScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0E16102D29377562000D9D61 /* LogScreenViewController.swift */,
+				0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */,
+				0EE7B7DE29377EC6001BCE90 /* Items */,
+			);
+			path = LogScreenViewController;
+			sourceTree = "<group>";
+		};
 		0E3D639A292982F80057659C /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +178,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0EE7B7DE29377EC6001BCE90 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */,
+				0EE7B7E129378615001BCE90 /* PasswordTFView.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		0EEC7A41291026770016AB4A = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +239,7 @@
 		0EEC7A68291028970016AB4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0E16102C2937754C000D9D61 /* LogScreenViewController */,
 				0E3D639A292982F80057659C /* HomeViewController */,
 				0E3D639B2929830B0057659C /* CalendarViewController */,
 				0E3D639D292983440057659C /* MapViewContolller */,
@@ -304,6 +332,7 @@
 				0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */,
 				0EACF0622930E23C005598E6 /* DinamicAnimalCardView.swift in Sources */,
 				0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */,
+				0EE7B7E229378615001BCE90 /* PasswordTFView.swift in Sources */,
 				0E233496292518410020BA0B /* CardStackView.swift in Sources */,
 				0EACF06629310899005598E6 /* CallButtonView.swift in Sources */,
 				0E3D63A229298B5F0057659C /* View + extension.swift in Sources */,
@@ -315,6 +344,7 @@
 				0EACF068293153C9005598E6 /* ApplicationManager.swift in Sources */,
 				0E1167F7292023EC00A35CFC /* User.swift in Sources */,
 				0E3D63A0292983F90057659C /* CardButtonView.swift in Sources */,
+				0EE7B7DD29377D1C001BCE90 /* LogScreenView.swift in Sources */,
 				0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */,
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
@@ -325,6 +355,8 @@
 				0E3D639929297F0C0057659C /* EditAnimalCardView.swift in Sources */,
 				0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */,
 				0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */,
+				0EE7B7E029377EE1001BCE90 /* LoginTFView.swift in Sources */,
+				0E16102E29377562000D9D61 /* LogScreenViewController.swift in Sources */,
 				0EEC7A6C291033510016AB4A /* ProfileViewController.swift in Sources */,
 				0EEC7A58291026770016AB4A /* PetCard.xcdatamodeld in Sources */,
 				0E8242D3291D457000D7F99D /* UIButton + extension.swift in Sources */,

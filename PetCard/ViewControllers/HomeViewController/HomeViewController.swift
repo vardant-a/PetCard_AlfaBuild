@@ -36,12 +36,12 @@ final class HomeViewController: UIViewController {
         setNavController()
         view.backgroundColor = .systemBackground
         
-        presentAnimalCad()
+        presentAnimalCard()
     }
 }
     // MARK: - Adding SwiftUI View for HomeViewController
 extension HomeViewController {
-    private func presentAnimalCad() {
+    private func presentAnimalCard() {
         self.addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.didMove(toParent: self)

@@ -27,10 +27,10 @@ extension UIButton {
                 primaryAction: action
             )
         } else {
-            let button = UIButton()
+            let button = UIButton(type: .system)
             button.setTitle(title, for: .normal)
             button.backgroundColor = .barColor ?? .systemGray
-            button.tintColor = .red
+            button.setTitleColor(.red, for: .normal)
             button.layer.cornerRadius = 8
             button.addTarget(target, action: objcAction, for: .touchUpInside)
             return button
