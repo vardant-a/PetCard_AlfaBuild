@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum Status {
+    case active
+    case desable
+}
+
 struct LogScreenView: View {
     @State private var login = ""
     @State private var password = ""
@@ -60,3 +65,5 @@ struct LogScreenView_Previews: PreviewProvider {
         LogScreenView(buttonAction: {print("1")})
     }
 }
+
+
