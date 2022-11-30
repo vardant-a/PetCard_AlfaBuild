@@ -41,11 +41,18 @@ struct LogScreenView: View {
                         .fontWeight(.bold)
                     Rectangle().frame(height: 2)
                 }
+                GoogleAutButton()
                 Spacer()
             }
             .padding()
     }
-
+    
+    @ViewBuilder
+    private func GoogleAutButton() -> some View {
+        Button(action: {}) {
+            Text("With to Google")
+        }
+    }
 }
 
 struct LogScreenView_Previews: PreviewProvider {
