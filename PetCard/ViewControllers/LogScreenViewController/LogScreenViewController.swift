@@ -28,6 +28,10 @@ final class LogScreenViewController: UIViewController {
         super.viewDidLoad()
         presentLoginView()
     }
+}
+
+    // MARK: - Private Methods
+extension LogScreenViewController {
     private func prepareForApp() {
         let tabBar = MainTabBarController()
         tabBar.modalPresentationStyle = .fullScreen
@@ -45,6 +49,7 @@ extension LogScreenViewController {
         setHostingViewConstrains()
     }
     
+    // Add constrains for Map
     private func setHostingViewConstrains() {
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         

@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import SwiftUI
 
 extension UIButton {
-    // MARK: - Create Button
+    
+    // MARK: - Create System Button
     
     static func createSystemButton(_ target: Any?, withTitle title: String, andColor color: UIColor, action: UIAction?, objcAction: Selector) -> UIButton {
         if #available(iOS 15.0, *) {
@@ -35,5 +35,14 @@ extension UIButton {
             button.addTarget(target, action: objcAction, for: .touchUpInside)
             return button
         }
+    }
+    
+    static func createSheetButton(_ target: Any?, action: UIAction?) -> UIButton {
+        let button = UIButton(type: .system)
+        let btnImage = UIImage(named: "poweron")
+        button.setTitleColor(.white, for: .normal)
+        button.setImage(btnImage, for: .normal)
+        
+        return button
     }
 }

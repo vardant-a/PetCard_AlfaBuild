@@ -15,10 +15,11 @@ struct CardStackView: View {
     var animal = Animal.getAnimalList()
     
     var body: some View {
-        if animalList.isEmpty {
+        //If AnimalList is Empty show Button for to add Animal
+        if !animalList.isEmpty {
             VStack {
                 Spacer()
-                Image("AnimalListIsEmpty")
+                Image("group")
                     .resizable()
                     .frame(maxWidth: 200, maxHeight: 218.7)
                 VStack {

@@ -89,7 +89,7 @@ struct StaticAnimalCardView: View {
             
             ReverseButton()
         }
-        .foregroundColor(.accentColor)
+        .foregroundColor(.black) // Color for all text AnimalCard
         .cardShell()
     }
     

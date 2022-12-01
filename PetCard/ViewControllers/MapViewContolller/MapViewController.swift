@@ -5,47 +5,33 @@
 //  Created by Алексей on 31.10.2022.
 //
 
-import UIKit
 import MapKit
 import CoreLocation
+import SwiftUI
 
 final class MapViewController: UIViewController {
     
     private var conditionNotification = true
+    private var statusShettView = false
     
     // MARK: - Private properties
     
     private let locationManager = CLLocationManager()
     private let lostPets = LostAnimal.shared.lostAnimals
     
-    // MARK: - MapKit
-    
+    // MARK: - Private lazy properties
+    // Add MapKit
     private lazy var mapKitView: MKMapView = {
         let map = MKMapView()
         return map
     }()
     
-    // MARK: - User Location Button
+    // Add SheetView
+    private lazy var sheetView = SheetView()
     
-    private lazy var userLocationButton: UIButton = {
-        let button = UIButton()
-        if conditionNotification {
-            button.setBackgroundImage(
-                UIImage(systemName: "location.north.circle.fill"), for: .normal)
-            button.tintColor = UIColor.systemBlue
-            button.backgroundColor = .white
-            button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
-            button.layer.cornerRadius = 25
-        } else {
-            button.setBackgroundImage(
-                UIImage(systemName: "location.north.circle.fill"), for: .normal)
-            button.tintColor = UIColor.systemBlue
-            button.backgroundColor = .black
-            button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
-            button.layer.cornerRadius = 25
-        }
-        return button
-    }()
+    private lazy var sheetButton = UIButton.createSheetButton(self, action: UIAction { [unowned self] _ in
+        showSheetView()
+    })
 
     // MARK: - Override methods
     
@@ -53,7 +39,7 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(mapKitView)
-        view.addSubview(userLocationButton)
+        view.addSubview(sheetView)
         setConstraints()
     }
     
@@ -83,13 +69,14 @@ extension MapViewController {
             mapKitView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-         // button
-        userLocationButton.translatesAutoresizingMaskIntoConstraints = false
+        // Add sheetView for MapVC
+//        sheetView.layer.cornerRadius = 20
+        sheetView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            userLocationButton.heightAnchor.constraint(equalToConstant: 50),
-            userLocationButton.widthAnchor.constraint(equalToConstant: 50),
-            userLocationButton.bottomAnchor.constraint(equalTo: mapKitView.bottomAnchor, constant: -100),
-            userLocationButton.trailingAnchor.constraint(equalTo: mapKitView.trailingAnchor, constant: -16),
+            sheetView.topAnchor.constraint(equalTo: mapKitView.bottomAnchor, constant: -100),
+            sheetView.leadingAnchor.constraint(equalTo: mapKitView.leadingAnchor),
+            sheetView.trailingAnchor.constraint(equalTo: mapKitView.trailingAnchor),
+            sheetView.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
 }
@@ -177,7 +164,37 @@ extension MapViewController {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
+    // MARK: - SheetView
+extension MapViewController {
+    private func showSheetView() {
+        if statusShettView {
+            //hide tre bottom sheet
+            UIView.animate(withDuration: 0.3, animations: {
+
+            }
+            )
+        } else {
+            
+        }
+    }
+    
+    private func sheetViewConstrains() {
+        sheetView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sheetView.heightAnchor.constraint(equalToConstant: 400)
+        ])
+    }
+}
+
+struct MapViewControllerProvider: PreviewProvider {
+    static var previews: some View {
+        MapViewController().showPreview()
+    }
+}
+
+
+
+// extension MapViewController: MKMapViewDelegate {
 //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 //        guard let annotation = annotation as? AnimalPlace else { return nil }
 //        var viewMarker: MKMarkerAnnotationView
@@ -196,4 +213,26 @@ extension MapViewController: MKMapViewDelegate {
 //        }
 //        return viewMarker
 //    }
-}
+//}
+
+//// MARK: - User Location Button
+//
+//private lazy var userLocationButton: UIButton = {
+//    let button = UIButton()
+//    if conditionNotification {
+//        button.setBackgroundImage(
+//            UIImage(systemName: "location.north.circle.fill"), for: .normal)
+//        button.tintColor = UIColor.systemBlue
+//        button.backgroundColor = .white
+//        button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
+//        button.layer.cornerRadius = 25
+//    } else {
+//        button.setBackgroundImage(
+//            UIImage(systemName: "location.north.circle.fill"), for: .normal)
+//        button.tintColor = UIColor.systemBlue
+//        button.backgroundColor = .black
+//        button.addTarget(self, action: #selector(setUserLocationStatus), for: .touchUpInside)
+//        button.layer.cornerRadius = 25
+//    }
+//    return button
+//}()
