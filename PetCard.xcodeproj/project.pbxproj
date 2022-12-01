@@ -18,6 +18,7 @@
 		0E3D63A229298B5F0057659C /* View + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D63A129298B5F0057659C /* View + extension.swift */; };
 		0E3D63A429298BF50057659C /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D63A329298BF50057659C /* Modifiers.swift */; };
 		0E45468629281BC6000EB218 /* FileManager + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45468529281BC6000EB218 /* FileManager + extension.swift */; };
+		0E4EA7A22938DBEF0078E281 /* PreviewProvider + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4EA7A12938DBEF0078E281 /* PreviewProvider + extension.swift */; };
 		0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */; };
 		0E79A4A4292580A400B51688 /* AddAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E79A4A3292580A400B51688 /* AddAnimalView.swift */; };
 		0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */; };
@@ -56,6 +57,7 @@
 		0E3D63A129298B5F0057659C /* View + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + extension.swift"; sourceTree = "<group>"; };
 		0E3D63A329298BF50057659C /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		0E45468529281BC6000EB218 /* FileManager + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + extension.swift"; sourceTree = "<group>"; };
+		0E4EA7A12938DBEF0078E281 /* PreviewProvider + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider + extension.swift"; sourceTree = "<group>"; };
 		0E55937D29117FCB00F8F362 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
 		0E79A4A3292580A400B51688 /* AddAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalView.swift; sourceTree = "<group>"; };
 		0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalInfoView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				0E45468529281BC6000EB218 /* FileManager + extension.swift */,
 				0E3D63A129298B5F0057659C /* View + extension.swift */,
 				0E3D63A329298BF50057659C /* Modifiers.swift */,
+				0E4EA7A12938DBEF0078E281 /* PreviewProvider + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				0EEC7A52291026770016AB4A /* HomeViewController.swift in Sources */,
 				0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */,
 				0EEC7A4E291026770016AB4A /* AppDelegate.swift in Sources */,
+				0E4EA7A22938DBEF0078E281 /* PreviewProvider + extension.swift in Sources */,
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0EACF0642930E371005598E6 /* Animal.swift in Sources */,
 				0E23F405291AEB60003CE686 /* Notification.swift in Sources */,

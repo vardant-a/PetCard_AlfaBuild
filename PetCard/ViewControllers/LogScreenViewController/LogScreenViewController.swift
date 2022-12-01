@@ -5,7 +5,6 @@
 //  Created by Aleksei on 30.11.2022.
 //
 
-import UIKit
 import SwiftUI
 
 final class LogScreenViewController: UIViewController {
@@ -55,5 +54,12 @@ extension LogScreenViewController {
             hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+}
+
+    // MARK: - Live PreviewProvider
+struct LogScreenViewProvider: PreviewProvider {
+    static var previews: some View {
+        LogScreenViewController().showPreview()
     }
 }
