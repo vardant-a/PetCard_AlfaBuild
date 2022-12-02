@@ -10,20 +10,19 @@ import SwiftUI
 struct LoginTFView: View {
     
     @Binding var login: String
-    var action: ()-> Void
+    
     var body: some View {
-        HStack {
-            Image(systemName: "person.circle")
-            TextField("name", text: $login)
-                .frame(maxWidth: .infinity, maxHeight: 38)
-        }
-        .padding(.horizontal, 8)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(login.isEmpty
-                        ? (.gray)
-                        : (.blue), lineWidth: 2)
-        )
+        TextField("Login", text: $login)
+            .keyboardType(.numberPad)
+            .textContentType(.telephoneNumber)
+            .padding(.leading, 16)
+            .frame(width: 350, height: 45)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(!login.isEmpty
+                            ? Color.accentColor
+                            : Color.gray,lineWidth: 2)
+            )
     }
 }
 

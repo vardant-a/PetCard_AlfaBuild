@@ -8,32 +8,31 @@
 import SwiftUI
 
 struct PasswordTFView: View {
+
     @Binding var password: String
-    @State private var isVisible = false
+    @State private var visible = false
     var body: some View {
         HStack {
-            Image(systemName: "lock.circle")
-            if isVisible {
-                TextField("password", text: $password)
-                    .frame(maxWidth: .infinity, maxHeight: 38)
+            if !visible {
+                SecureField("Password", text: $password)
+                    .padding(.leading, 16)
             } else {
-                SecureField("password", text: $password)
-                    .frame(maxWidth: .infinity, maxHeight: 38)
+                TextField("Password", text: $password)
+                    .padding(.leading, 16)
             }
-            Button(action: { isVisible.toggle()} ) {
-                Image(systemName: isVisible
-                      ? "eye.slash" : "eye"
-                )
+            Button { visible.toggle() } label: {
+                Image(systemName: visible ? "eye.slash" : "eye")
+                    .opacity(password.isEmpty ? 0 : 1)
+                    .disabled(password.isEmpty)
             }
-            .opacity(password.isEmpty ? 0 : 1)
         }
-        .padding(.horizontal, 8)
+        .padding(.trailing, 16)
+        .frame(width: 350, height: 45)
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(password.isEmpty
-                        ? (.gray)
-                        : (.blue), lineWidth: 2)
-                
+                .stroke(!password.isEmpty
+                        ? Color.accentColor
+                        : Color.gray,lineWidth: 2)
         )
     }
 }

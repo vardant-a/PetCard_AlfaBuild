@@ -30,6 +30,7 @@
 		0EACF068293153C9005598E6 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF067293153C9005598E6 /* ApplicationManager.swift */; };
 		0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED135462923DF9000BF3757 /* StorageManager.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
+		0ED91C67293AA2C1000DDEE9 /* StandartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED91C66293AA2C1000DDEE9 /* StandartButton.swift */; };
 		0EE7B7DD29377D1C001BCE90 /* LogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */; };
 		0EE7B7E029377EE1001BCE90 /* LoginTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */; };
 		0EE7B7E229378615001BCE90 /* PasswordTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7E129378615001BCE90 /* PasswordTFView.swift */; };
@@ -70,6 +71,7 @@
 		0EACF067293153C9005598E6 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		0ED135462923DF9000BF3757 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
+		0ED91C66293AA2C1000DDEE9 /* StandartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartButton.swift; sourceTree = "<group>"; };
 		0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScreenView.swift; sourceTree = "<group>"; };
 		0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTFView.swift; sourceTree = "<group>"; };
 		0EE7B7E129378615001BCE90 /* PasswordTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTFView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */,
 				0EE7B7E129378615001BCE90 /* PasswordTFView.swift */,
+				0ED91C66293AA2C1000DDEE9 /* StandartButton.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0E4EA7A42938F7E90078E281 /* SheetView.swift in Sources */,
 				0EACF0642930E371005598E6 /* Animal.swift in Sources */,
+				0ED91C67293AA2C1000DDEE9 /* StandartButton.swift in Sources */,
 				0E23F405291AEB60003CE686 /* Notification.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
 				0E3D639929297F0C0057659C /* EditAnimalCardView.swift in Sources */,
