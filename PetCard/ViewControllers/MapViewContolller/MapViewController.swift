@@ -73,10 +73,9 @@ extension MapViewController {
 //        sheetView.layer.cornerRadius = 20
         sheetView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sheetView.topAnchor.constraint(equalTo: mapKitView.bottomAnchor, constant: -100),
+            sheetView.bottomAnchor.constraint(equalTo: mapKitView.bottomAnchor, constant: 20),
             sheetView.leadingAnchor.constraint(equalTo: mapKitView.leadingAnchor),
             sheetView.trailingAnchor.constraint(equalTo: mapKitView.trailingAnchor),
-            sheetView.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
 }

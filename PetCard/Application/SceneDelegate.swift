@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = LogScreenViewController()
-//        window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
     }
 
@@ -34,7 +33,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-//        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         StorageManager.shared.saveContext()
     }
 }

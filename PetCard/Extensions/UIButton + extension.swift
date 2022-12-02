@@ -38,9 +38,8 @@ extension UIButton {
     }
     
     static func createSheetButton(_ target: Any?, action: UIAction?) -> UIButton {
-        let button = UIButton(type: .system)
-        let btnImage = UIImage(named: "poweron")
-        button.setTitleColor(.white, for: .normal)
+        let button = UIButton()
+        let btnImage = UIImage(named: "minus")
         button.setImage(btnImage, for: .normal)
         
         return button
