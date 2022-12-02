@@ -19,16 +19,6 @@ final class ProfileViewController: UIViewController {
             },
             objcAction: #selector(logOutTest)
         )
-        
-    private lazy var versionAppLabel: UILabel = {
-        let label = UILabel()
-        // Determining the Application Version
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        label.text = "Application version - \(appVersion ?? "xxx")"
-        label.textColor = UIColor.systemGray
-        label.font = UIFont.systemFont(ofSize: 11)
-        return label
-    }()
     
     // MARK: - Override methods
     
@@ -36,7 +26,6 @@ final class ProfileViewController: UIViewController {
         super.viewDidLoad()
         setNavController()
         view.backgroundColor = .systemBackground
-        view.addSubview(versionAppLabel)
         view.addSubview(logOutButton)
         setConstrains()
     }
@@ -94,14 +83,6 @@ extension ProfileViewController {
     // MARK: - Constrains setting
 extension ProfileViewController {
     private func setConstrains() {
-        // constrains versionAppLabel
-        versionAppLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            versionAppLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            versionAppLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        ])
-        
         // constrains logOutButton
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
         

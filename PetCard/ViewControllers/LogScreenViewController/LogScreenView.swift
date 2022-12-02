@@ -21,8 +21,12 @@ struct LogScreenView: View {
     @State private var password = ""
     
     var buttonAction: () -> Void
+    
+    // Determining the Application Version
+    private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     var body: some View {
         VStack {
+            Spacer()
             Image("Logo")
                 .resizable()
                 .frame(width: 150, height: 150)
@@ -42,6 +46,12 @@ struct LogScreenView: View {
             RouteButton(
                 title: "Log In",
                 action: { buttonAction() })
+            Spacer()
+            
+            Text("Application version - \(appVersion ?? "xxx")")
+                .font(.system(size: 13))
+                .foregroundColor(.gray)
+                .padding(.bottom, 5)
         }
 
     }
