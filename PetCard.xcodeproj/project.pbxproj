@@ -30,7 +30,7 @@
 		0EACF068293153C9005598E6 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EACF067293153C9005598E6 /* ApplicationManager.swift */; };
 		0ED135472923DF9000BF3757 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED135462923DF9000BF3757 /* StorageManager.swift */; };
 		0ED5AD762912B22600042E12 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5AD752912B22600042E12 /* UIColor + extension.swift */; };
-		0ED91C67293AA2C1000DDEE9 /* StandartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED91C66293AA2C1000DDEE9 /* StandartButton.swift */; };
+		0ED91C67293AA2C1000DDEE9 /* StandartBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED91C66293AA2C1000DDEE9 /* StandartBlueButton.swift */; };
 		0EE7B7DD29377D1C001BCE90 /* LogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */; };
 		0EE7B7E029377EE1001BCE90 /* LoginTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */; };
 		0EE7B7E229378615001BCE90 /* PasswordTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7B7E129378615001BCE90 /* PasswordTFView.swift */; };
@@ -44,6 +44,8 @@
 		0EEC7A6A291028D90016AB4A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A69291028D90016AB4A /* MapViewController.swift */; };
 		0EEC7A6C291033510016AB4A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6B291033510016AB4A /* ProfileViewController.swift */; };
 		0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC7A6D291041940016AB4A /* CalendarViewController.swift */; };
+		0EF78E40293AB7F8005F0E2C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF78E3F293AB7F8005F0E2C /* RegisterView.swift */; };
+		0EF78E44293AC340005F0E2C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF78E43293AC340005F0E2C /* ForgotPasswordView.swift */; };
 		0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +73,7 @@
 		0EACF067293153C9005598E6 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		0ED135462923DF9000BF3757 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0ED5AD752912B22600042E12 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
-		0ED91C66293AA2C1000DDEE9 /* StandartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartButton.swift; sourceTree = "<group>"; };
+		0ED91C66293AA2C1000DDEE9 /* StandartBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartBlueButton.swift; sourceTree = "<group>"; };
 		0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScreenView.swift; sourceTree = "<group>"; };
 		0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTFView.swift; sourceTree = "<group>"; };
 		0EE7B7E129378615001BCE90 /* PasswordTFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTFView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,8 @@
 		0EEC7A69291028D90016AB4A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0EEC7A6B291033510016AB4A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0EEC7A6D291041940016AB4A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0EF78E3F293AB7F8005F0E2C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		0EF78E43293AC340005F0E2C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		0EFA571129128ABB008C4DC6 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,8 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				0E16102D29377562000D9D61 /* LogScreenViewController.swift */,
-				0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */,
-				0EE7B7DE29377EC6001BCE90 /* Items */,
+				0EF78E41293AC2E0005F0E2C /* Views */,
 			);
 			path = LogScreenViewController;
 			sourceTree = "<group>";
@@ -115,11 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0EEC7A51291026770016AB4A /* HomeViewController.swift */,
-				0E233495292518410020BA0B /* CardStackView.swift */,
-				0E79A4A3292580A400B51688 /* AddAnimalView.swift */,
-				0E3D639829297F0C0057659C /* EditAnimalCardView.swift */,
-				0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */,
-				0E3D639C2929832C0057659C /* IItems */,
+				0EF78E42293AC302005F0E2C /* Views */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -191,7 +190,7 @@
 			children = (
 				0EE7B7DF29377EE1001BCE90 /* LoginTFView.swift */,
 				0EE7B7E129378615001BCE90 /* PasswordTFView.swift */,
-				0ED91C66293AA2C1000DDEE9 /* StandartButton.swift */,
+				0ED91C66293AA2C1000DDEE9 /* StandartBlueButton.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -255,6 +254,29 @@
 				0E3D639E2929835A0057659C /* ProfileViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0EF78E41293AC2E0005F0E2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EE7B7DC29377D1C001BCE90 /* LogScreenView.swift */,
+				0EF78E3F293AB7F8005F0E2C /* RegisterView.swift */,
+				0EF78E43293AC340005F0E2C /* ForgotPasswordView.swift */,
+				0EE7B7DE29377EC6001BCE90 /* Items */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0EF78E42293AC302005F0E2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E3D639C2929832C0057659C /* IItems */,
+				0E8242D0291D21B200D7F99D /* DetailAnimalInfoView.swift */,
+				0E3D639829297F0C0057659C /* EditAnimalCardView.swift */,
+				0E79A4A3292580A400B51688 /* AddAnimalView.swift */,
+				0E233495292518410020BA0B /* CardStackView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0EFA571329129B45008C4DC6 /* Resources */ = {
@@ -347,6 +369,7 @@
 				0E3D63A229298B5F0057659C /* View + extension.swift in Sources */,
 				0EFA571229128ABB008C4DC6 /* MainNavigationController.swift in Sources */,
 				0E8242D1291D21B200D7F99D /* DetailAnimalInfoView.swift in Sources */,
+				0EF78E44293AC340005F0E2C /* ForgotPasswordView.swift in Sources */,
 				0E55937E29117FCB00F8F362 /* NotificationListViewController.swift in Sources */,
 				0EEC7A6E291041940016AB4A /* CalendarViewController.swift in Sources */,
 				0E45468629281BC6000EB218 /* FileManager + extension.swift in Sources */,
@@ -361,8 +384,9 @@
 				0EEC7A67291026DF0016AB4A /* MainTabBarController.swift in Sources */,
 				0E4EA7A42938F7E90078E281 /* SheetView.swift in Sources */,
 				0EACF0642930E371005598E6 /* Animal.swift in Sources */,
-				0ED91C67293AA2C1000DDEE9 /* StandartButton.swift in Sources */,
+				0ED91C67293AA2C1000DDEE9 /* StandartBlueButton.swift in Sources */,
 				0E23F405291AEB60003CE686 /* Notification.swift in Sources */,
+				0EF78E40293AB7F8005F0E2C /* RegisterView.swift in Sources */,
 				0EEC7A50291026770016AB4A /* SceneDelegate.swift in Sources */,
 				0E3D639929297F0C0057659C /* EditAnimalCardView.swift in Sources */,
 				0E27DA34291408C900B768C0 /* AnimalPlace.swift in Sources */,

@@ -14,7 +14,7 @@ struct StandartBlueButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .frame(width: 350, height: 45)
+                .frame(maxWidth: .infinity, maxHeight: 44)
                 .tint(.white)
         }
         .background(Color.accentColor)
