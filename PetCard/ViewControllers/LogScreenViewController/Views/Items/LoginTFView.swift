@@ -13,8 +13,6 @@ struct LoginTFView: View {
     
     var body: some View {
         TextField("Login", text: $login)
-            .keyboardType(.numberPad)
-            .textContentType(.telephoneNumber)
             .padding(.leading, 16)
             .frame(width: 350, height: 45)
             .overlay(

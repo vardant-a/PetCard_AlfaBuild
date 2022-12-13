@@ -15,9 +15,13 @@ struct PasswordTFView: View {
         HStack {
             if !visible {
                 SecureField("Password", text: $password)
+                    .keyboardType(.numberPad)
+                    .textContentType(.telephoneNumber)
                     .padding(.leading, 16)
             } else {
                 TextField("Password", text: $password)
+                    .keyboardType(.numberPad)
+                    .textContentType(.telephoneNumber)
                     .padding(.leading, 16)
             }
             Button { visible.toggle() } label: {

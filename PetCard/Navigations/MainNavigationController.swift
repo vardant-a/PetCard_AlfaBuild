@@ -17,8 +17,12 @@ final class MainNavigationController: UINavigationController {
     
     override internal var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle(
-            rawValue: (topViewController?.preferredStatusBarStyle)!.rawValue) ?? .default
+            rawValue: (
+                topViewController?.preferredStatusBarStyle)!.rawValue
+        ) ?? .default
     }
+    
+    // MARK: - Public override Methods
     
     public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
@@ -26,23 +30,10 @@ final class MainNavigationController: UINavigationController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .barColor
-        
-//        appearance.titleTextAttributes = [
-//            .foregroundColor: УСЛОВИЕ
-//            ? UIColor.blue
-//            : UIColor.black
-//        ]
-
-//        appearance.largeTitleTextAttributes = [
-//            .foregroundColor: УСЛОВИЕ
-//            ? UIColor.green
-//            : UIColor.black
-//        ]
 
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.prefersLargeTitles = false
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,3 +52,16 @@ extension MainNavigationController {
         UINavigationBar.appearance().prefersLargeTitles = true
     }
 }
+
+
+//        appearance.titleTextAttributes = [
+//            .foregroundColor: УСЛОВИЕ
+//            ? UIColor.blue
+//            : UIColor.black
+//        ]
+
+//        appearance.largeTitleTextAttributes = [
+//            .foregroundColor: УСЛОВИЕ
+//            ? UIColor.green
+//            : UIColor.black
+//        ]
