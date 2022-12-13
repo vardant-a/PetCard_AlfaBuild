@@ -14,6 +14,3 @@ extension View {
         modifier(CardShell())
     }
 }
-
-
-

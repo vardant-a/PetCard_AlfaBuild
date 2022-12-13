@@ -75,9 +75,9 @@ extension ProfileViewController {
 
 extension ProfileViewController {
     @objc func presentNotifications() {
-        let notificationVC = NotificationListViewController()
-        navigationController?
-            .pushViewController(notificationVC, animated: true)
+//        let notificationVC = NotificationListViewController()
+//        navigationController?
+//            .pushViewController(notificationVC, animated: true)
     }
 }
     // MARK: - Constrains setting

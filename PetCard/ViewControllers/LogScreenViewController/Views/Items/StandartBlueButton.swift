@@ -13,9 +13,10 @@ struct StandartBlueButton: View {
     
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Text("Log In")
                 .frame(maxWidth: .infinity, maxHeight: 44)
                 .tint(.white)
+                .padding(.vertical)
         }
         .background(Color.accentColor)
         .clipShape(RoundedRectangle(cornerRadius: 12))

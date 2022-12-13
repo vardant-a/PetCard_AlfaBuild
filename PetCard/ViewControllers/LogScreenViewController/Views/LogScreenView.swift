@@ -20,45 +20,43 @@ struct LogScreenView: View {
     // Determining the Application Version
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     var body: some View {
-        NavigationView {
-            VStack(alignment: .center) {
-                Image("Logo")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .padding(.top, 80)
-                
-                Text("Welcome")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.gray)
-                
-                LoginTFView(login: $login)
-                    .padding(.bottom, 8)
-                
-                PasswordTFView(password: $password)
-                
-                HStack {
-                    NavigationLink("Forgot your password?") {
-                        ForgotPasswordView()
-                    }
-                    
-                    NavigationLink("Account registration") {
-                        RegisterView()
-                    }
+        ScrollView {
+            Image("Logo")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .padding(.top, 80)
+            
+            Text("Welcome")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.gray)
+            
+            LoginTFView(login: $login)
+                .padding(.bottom, 8)
+            
+            PasswordTFView(password: $password)
+            
+            HStack {
+                NavigationLink("Forgot your password?") {
+                    ForgotPasswordView()
                 }
                 
-                StandartBlueButton(
-                    title: "Log In",
-                    action: { buttonAction() })
-                Spacer()
+                NavigationLink("Account registration") {
+                    RegisterView()
+                }
+            }
+            
+            StandartBlueButton(
+                title: "Log In",
+                action: { buttonAction() }
+            )
                 
                 Text("Application version - \(appVersion ?? "xxx")")
                     .font(.system(size: 13))
                     .foregroundColor(.gray)
                     .padding(.bottom, 0)
-            }
-            .padding()
         }
+        .padding()
     }
 }
 

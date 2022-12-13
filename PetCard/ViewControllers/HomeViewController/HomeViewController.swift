@@ -39,26 +39,7 @@ final class HomeViewController: UIViewController {
         presentAnimalCard()
     }
 }
-    // MARK: - Adding SwiftUI View for HomeViewController
-extension HomeViewController {
-    private func presentAnimalCard() {
-        self.addChild(hostingController)
-        view.addSubview(hostingController.view)
-        hostingController.didMove(toParent: self)
-        
-        setHostingViewConstrains()
-    }
-    
-    private func setHostingViewConstrains() {
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-}
+
 
     // MARK: - Settings NavigationController
 extension HomeViewController {
@@ -92,4 +73,25 @@ extension HomeViewController {
     @objc func startScanQRCode() {
         print("test")
     }
+}
+
+// MARK: - Adding SwiftUI View for HomeViewController
+extension HomeViewController {
+private func presentAnimalCard() {
+    self.addChild(hostingController)
+    view.addSubview(hostingController.view)
+    hostingController.didMove(toParent: self)
+    
+    setHostingViewConstrains()
+}
+
+private func setHostingViewConstrains() {
+    hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+        hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+        hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    ])
+}
 }
