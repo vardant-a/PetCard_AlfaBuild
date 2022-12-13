@@ -3,8 +3,8 @@
 <p align="center">  
 <img src = "Assets/Logo.png" /><br>
   <img src = "https://img.shields.io/badge/Version%20project%3A-Alfa--Build-green"/>
-  <img src = "https://img.shields.io/badge/Platform-iOS%2014.0%2B-orange" />
-  <img src = "https://img.shields.io/badge/Apple%20SDK-UIKit%20%2B%20SwiftUI-inactive" />
+  <img src = "https://img.shields.io/badge/Platform-iOS%2014.0%2B-orange"/>
+  <img src = "https://img.shields.io/badge/Apple%20SDK-UIKit%20%2B%20SwiftUI-inactive"/>
 </p>
 
 # PetCard
@@ -21,7 +21,7 @@ The interface is formed without the use of storyboard.
 - MapKit, CoreLocation
 - MVC
 
-##LogScreen (UIKit + SwiftUI)
+## LogScreen (UIKit + SwiftUI)
 <p align="center"> 
 <img src = "Assets/LogScreen.gif" /><br>
 </p>
